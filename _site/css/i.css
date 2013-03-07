@@ -155,6 +155,16 @@ em {
     .large-list a .meta {
       display: block; }
 
+.time-travel {
+  background: #222222;
+  color: white;
+  padding: .5em;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 100; }
+  .time-travel:hover {
+    background-color: #ff5335; }
+
 nav[role="navigation"] li,
 ul.social li {
   display: inline-block;
