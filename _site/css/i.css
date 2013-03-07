@@ -101,7 +101,7 @@ p {
     .post h1 {
       font-size: 32px; } }
 .post footer {
-  color: #eeeeee; }
+  color: #999999; }
 
 @media screen and (min-width: 100px) and (max-width: 479px) {
   .h1-r {

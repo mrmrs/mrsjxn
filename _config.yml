@@ -1,13 +1,15 @@
 # This will be the first part of the title tag for your site <title> site.name + page.title </title>
-name: "JKL"
+name: "MRSJXN"
 # Populates the meta description for the site. Should be under 150 characters for best SEO purposes.
-descripiton: ""
+description: "mrmrs + jxnblk. Post-Future beats."
 
 # Owner (organization or individual) of site content
-author: ""
+author: "mrsjxn"
 
 #url: "[http:// ]"
-url: "[http://localhost:4000]"
+url: "http://mrsjxn.com"
+# Production
+#url: "[http://mrsjxn.com]"
 
 # Pagination variable for how many posts to show in a list
 paginate: 5
@@ -21,12 +23,10 @@ permalink: pretty
 #permalink: /blog/:yearr/:month/:day/:title       => /blog/2009/04/29/slap-chop/index.html
 
 # If you want to display social nav - fill out the appropriate handles. Delete or comment out unneeded networks. 
-github: "mrmrs"
-twitter: "mrmrs_"
-instagram: "mrmrs_"
-dribbble: "mrmrs"
-soundcloud: "mrmrs"
-flickr: "heyitsadam"
+#github: "mrsjxn"
+twitter: "mrsjxn_"
+instagram: "mrsjxn_"
+soundcloud: "mrsjxn"
 
 # UnComment once you have pygments installed. Used for code syntax highlighting.
-pygments: true
+#pygments: true
