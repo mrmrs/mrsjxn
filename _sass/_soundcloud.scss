@@ -128,12 +128,12 @@ a.sc-pause {
 }
 
 .sc-scrubber .sc-time-indicators{
-color:#fff;
-    font-size:64px;
-    text-transform:uppercase;
-width:100%;
-text-align:center;
-    font-family:"proxima nova";
+  color:#fff;
+  font-size:64px;
+  text-transform:uppercase;
+  width:100%;
+  text-align:center;
+  font-family:"proxima nova",helvetica, sans-serif;
 }
 
 .sc-info h3 {
@@ -158,7 +158,9 @@ text-align:center;
     height:380px!important;  
   }
   .sc-time-indicators {
-      font-size:24px!important;
+      font-size:20px!important;
+      position:relative;
+      top:-20px;
   }
   .sc-info h3 {position:absolute;top:220px;width:100%;text-align:center;}
   .sc-info h3 a {font-size:48px;position:absolute;top:0;width:100%;text-align:center;}
