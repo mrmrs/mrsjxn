@@ -1,6 +1,6 @@
 // Include all the partials you want compiled into i.css
 
-@import "reset";
+@import "normalize";
 
 @import "vars";
 @import "colors";
@@ -13,6 +13,5 @@
 @import "spacing";
 @import "images";
 @import "syntax";
-@import "code";
 
 @import "soundcloud";

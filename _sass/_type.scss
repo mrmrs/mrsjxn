@@ -1,14 +1,12 @@
-// The internet is run on paragraphs and links. Let people see them please.
+// Headers
 
-
-h1,h2,h3,h4,h5,h6 {
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
   font-weight:100;
-}
-
-// I mean it's not that big.
-
-h1,.h2,.h3,.h4,.h5,.h6 {
-  margin-bottom:.25em;
 }
 
 h1,.h1 {
@@ -42,7 +40,6 @@ p {
   font-size:$type-4;
   line-height:$copy-line-height;
   + p { 
-    //text-indent:1em; 
     margin-top:1em;
   }
 }

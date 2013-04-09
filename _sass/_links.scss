@@ -1,3 +1,5 @@
+
+
 .time-travel {
   background:$grey-dark;
   color:white;
@@ -9,3 +11,16 @@
     background-color:$orange;
   }
 }
+
+.text-link {
+  text-decoration:none;
+  color:$grey-medium;
+  transition:color, .5s;
+}
+
+.text-link:hover {
+  color:$orange;
+  transition:color, .5s;
+}
+
+
