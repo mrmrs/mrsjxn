@@ -1,0 +1,167 @@
+
+.sc-player {
+    position:relative;
+    height:600px;
+    float:left;
+    width:100%;
+    margin-top:0;
+}
+
+.sc-artwork-list  {
+    position:absolute;
+    top:0;
+    width:100%;
+
+    img {
+        -webkit-filter: grayscale(100%);
+        position:absolute;
+        top:0;
+    }
+}
+
+
+.sc-controls {
+    z-index:999;
+    background:transparent;
+    position:absolute;
+    top:0;
+    text-align:center;
+    width:100%;
+    display:block;
+}
+
+a.sc-play {
+    display:block;
+    background:rgba(255,255,255,.2) url(http://heyitsadam.com/play.svg) no-repeat center center;
+    background-size:50%;
+    height:120px;
+    width:120px;
+    margin:80px auto 120px auto;
+    text-indent:-9999px;
+    z-index:500;
+    border-radius:9999px;
+    -webkit-transition:opacity .8s, background-size .8s;
+    &:hover {
+        transition:opacity .8s;
+        -webkit-transition:opacity .8s, background-size .8s;
+        opacity:0.7;
+        background-size:42%;
+    }
+}
+
+a.sc-pause {
+    display:block;
+    background:rgba(255,255,255,.2) url(http://heyitsadam.com/pause.svg) no-repeat center center;
+    background-size:50%;
+    margin:80px auto 120px auto;
+    height:120px;
+    width:120px;
+    text-indent:-9999px;
+    z-index:500;
+    border-radius:9999px;
+    -webkit-transition:opacity .8s, background-size .8s;
+    &:hover {
+        transition:opacity .8s;
+        -webkit-transition:opacity .8s, background-size .8s;
+        opacity:0.7;
+        background-size:42%;
+    }
+}
+
+
+.sc-player .sc-controls a.sc-pause{
+  display: none;
+}
+
+.sc-player.playing .sc-controls a.sc-play{
+  display: none;
+}
+
+.sc-player.playing .sc-controls a.sc-pause{
+  display: block;
+}
+
+.sc-waveform-container {
+    img {
+        height:20em;
+        display:none;
+    }
+}
+
+.sc-scrubber {
+  display: block;
+  z-index: 300;
+  top:0;
+  height:300px;
+}
+
+.sc-scrubber {
+    position:absolute;
+    top:0;
+    width:100%;
+}
+
+.sc-scrubber .sc-time-span{
+    position: relative;
+    height:100%;
+    top:0;
+}
+
+.sc-scrubber .sc-buffer, 
+.sc-scrubber .sc-played {
+    top:0;
+    position:absolute;
+    background-color:#fff;
+    opacity:0.05;
+    height:600px;
+    @include breakpoint(one-hand) {
+      height:480px; 
+    }
+    width:100%;
+}
+
+.sc-track-duration {
+  text-align: right;
+  float: right;
+  padding: 0 5px;
+  margin-left: 5px;
+}
+
+.sc-scrubber .sc-time-indicators{
+color:#fff;
+    font-size:64px;
+    text-transform:uppercase;
+width:100%;
+text-align:center;
+    font-family:"proxima nova";
+}
+
+.sc-info h3 {
+  z-index:800;
+  color:#fff;
+  position:absolute;
+  top:420px;
+  width:100%;
+  text-align:center;
+}
+
+.sc-info h3 a {
+  text-decoration:none;
+  color:#fff;
+  font-size:96px;
+  opacity:0.03;
+}
+  
+
+@include breakpoint(one-hand) {
+  .post .sc-player {
+    height:380px!important;  
+  }
+  .sc-time-indicators {
+      font-size:24px!important;
+  }
+  .sc-info h3 {position:absolute;top:220px;width:100%;text-align:center;}
+  .sc-info h3 a {font-size:48px;position:absolute;top:0;width:100%;text-align:center;}
+}
+
+

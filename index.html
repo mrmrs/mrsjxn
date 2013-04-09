@@ -3,14 +3,18 @@ layout: default
 ---
 
 <section class="single-column">
-  <article class="post">
+<div class="float-container">
+  <article class="post flf">
+  <a href="https://soundcloud.com/mrsjxn/meissner-effect" class="sc-player">Meissner Effect</a>
+  <!--
     {% for post in site.posts limit: 1 %}
-       <h1 class="ct h1">{{ post.title }}</h1>
       {{ post.content }}
     {% endfor %}
+    -->
   </article>
-  <section class="mt-4">
-    <article>
+  <section class="flf">
+    <article class="mt-1">
+      <h1 class="catalog-title">The Catalog</h1>
       <ul class="large-list ct mt-1">
         {% for post in paginator.posts %}
           <li><a href="{{ post.url }}" title="{{post.title}}">
@@ -21,4 +25,5 @@ layout: default
       </ul>
     </article>
   </section>
+</div>
 </section>

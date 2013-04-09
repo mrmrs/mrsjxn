@@ -1,0 +1,60 @@
+/*
+Syntax error: Invalid CSS after "...kground-color: ": expected expression (e.g. 1px, bold), was "#transparent;"
+        on line 20 of _sass/sc-player-standard/structure-horizontal.scss
+
+15: /* Artworks */
+16: 
+17: .sc-player .sc-artwork-list{
+18:   width: 50%;
+19:   height: 100%;
+20:   background-color: #transparent;
+21:   list-style-type: none;
+22:   position: relative;
+23: }
+24: 
+25: .sc-player .sc-artwork-list li{
+
+Backtrace:
+_sass/sc-player-standard/structure-horizontal.scss:20
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:1148:in `expected'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/script/lexer.rb:199:in `expected!'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/script/parser.rb:472:in `assert_expr'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/script/parser.rb:49:in `parse'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:1022:in `sass_script'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:882:in `value!'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:859:in `declaration'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:582:in `block in declaration_or_ruleset'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:1122:in `call'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:1122:in `rethrow'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:592:in `declaration_or_ruleset'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:554:in `block_child'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:546:in `block_contents'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:535:in `block'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:529:in `ruleset'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:553:in `block_child'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:546:in `block_contents'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:82:in `stylesheet'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/scss/parser.rb:27:in `parse'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/engine.rb:342:in `_to_tree'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/engine.rb:315:in `_render'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/engine.rb:262:in `render'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:201:in `each'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/plugin/compiler.rb:235:in `watch'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/plugin.rb:107:in `method_missing'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/exec.rb:445:in `watch_or_update'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/exec.rb:307:in `process_result'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/exec.rb:41:in `parse'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/lib/sass/exec.rb:21:in `parse!'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.2.7/bin/sass:9:in `<top (required)>'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/bin/sass:19:in `load'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/bin/sass:19:in `<main>'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `eval'
+/Users/mrmrs/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"...kground-color: \": expected expression (e.g. 1px, bold), was \"#transparent;\"\A         on line 20 of _sass/sc-player-standard/structure-horizontal.scss\A \A 15: /* Artworks */\A 16: \A 17: .sc-player .sc-artwork-list{\A 18:   width: 50%;\A 19:   height: 100%;\A 20:   background-color: #transparent;\A 21:   list-style-type: none;\A 22:   position: relative;\A 23: }\A 24: \A 25: .sc-player .sc-artwork-list li{"; }
