@@ -1,0 +1,150 @@
+// Your styles here.
+.relative {position:relative;}
+.dk {background:#efefef;}
+.header {
+  height:200px;
+  overflow:hidden;
+}
+
+.sc-info h3 a {position:absolute;left:0;font-size:64px;top:120px;text-transform:uppercase;color:#fff;width:100%;text-align:center;}
+.sc-info-close,.sc-info p,.sc-info h4 {display:none;}
+.sc-trackslist {display:none;}
+.sc-info-toggle {display:none;}
+.sc-time-indicators {right:20px;position:absolute;font-size:16px;color:#fff;top:148px;}
+
+.h1 {
+  font-weight:100;
+  color:#111;
+  line-height:1;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  font-size:64px;
+  text-align:center;
+  width:100%;
+}
+
+.h2 {
+  line-height:1;
+  font-size:16px;
+  color:#fff;
+  width:100%;
+  text-align:center;
+  font-weight:100;
+  color:#999;
+}
+
+body {
+  font-family:"proxima nova", helvetica,arial,sans-serif;
+  position:relative;
+  background:#efefef;
+}
+
+img {max-width:100%;width:100%;}
+
+a {text-decoration:none;}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+
+.sc-waveform-container {
+  opacity:0;
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index:100;
+  img {height:300px;}
+}
+
+.playing .sc-waveform-container {
+  opacity:1;
+  transition:opacity .8s ease-in;
+}
+
+
+.img-wrapper {
+  height:300px;
+  overflow:hidden;
+}
+
+.sc-artwork-list {
+  display:none;
+}
+
+.sc-played {
+  position:absolute;
+  top:0;
+  height:300px;
+  background:cyan;
+  opacity:0.1;
+  z-index:20;
+}
+
+.sc-play,
+.sc-pause {
+  top:118px;
+  left:50px;
+  position:absolute;
+  text-indent:-9999px;
+  width:64px;
+  height:64px;
+  -webkit-background-size:50%;
+  background-size:50%;
+  border-radius:8px;
+  transition:background-size .25s ease-in;
+    -webkit-transition:background-size .25s ease-out;
+  &:hover {
+    background-size:60%; 
+    transition:background-size .25s ease-out;
+    -webkit-transition:background-size .25s ease-out;
+  }
+  &:active {
+    background-size:30%; 
+    transition:background-size .25s ease-in;
+    -webkit-transition:background-size .25s ease-out;
+  }
+}
+
+.sc-play {
+  background:rgba(0,0,0,0.4) url(http://heyitsadam.com/play.svg) no-repeat center center;
+  z-index:999;
+  display:inline-block;
+}
+
+.sc-pause {
+  background:rgba(0,0,0,.2) url(http://heyitsadam.com/pause.svg) no-repeat center center;
+  display:none;
+  transition:top 1s ease-in;
+  z-index:999;
+}
+
+.playing .sc-pause {
+  display:inline-block;
+  transition:top 1s ease-in;
+}
+
+.playing .sc-play {
+  display:none!important;
+}
+
+.img-wrapper img {
+  -webkit-filter:grayscale(1);
+}
+
+// Media Queries 
+
+
+// Iphone 5: All
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) { 
+  .sc-play,
+  .sc-pause {
+    width:48px; 
+    height:48px;
+    left:10px;
+  }
+  .h1 {font-size:32px;}
+  .h2 {font-size:12px;padding:0;margin-top:-10px;}
+  .sc-player .sc-info h3 a {font-size:18px!important;top:130px;}
+  .sc-time-indicators {font-size:11px;top:133px;right:5px;}
+  .header {height:100px;}
+}

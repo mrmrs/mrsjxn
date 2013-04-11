@@ -1,24 +1,17 @@
 ---
 layout: default
 ---
-
-<section class="single-column">
-  <article class="post">
-    {% for post in site.posts limit: 1 %}
-       <h1 class="ct h1">{{ post.title }}</h1>
-      {{ post.content }}
-    {% endfor %}
-  </article>
-  <section class="mt-4">
-    <article>
-      <ul class="large-list ct mt-1">
-        {% for post in paginator.posts %}
-          <li><a href="{{ post.url }}" title="{{post.title}}">
-            <span class="meta">{{ post.date | date_to_long_string }}</span>
-            {{ post.title }}
-          </a></li>
-        {% endfor %}
-      </ul>
-    </article>
-  </section>
+<header class="dk header">
+  <h1 class="h1">MRSJXN</h1>
+  <h2 class="h2">post future music</h2>
+</header>
+<section>
+<div class="relative">
+  <div class="player-container">
+    <div class="img-wrapper">
+      <img src="{{site.url}}/img/meissner-effect.jpg">
+    </div>
+    <a href="https://soundcloud.com/mrsjxn/" class="sc-player">MRMRS</a>
+  </div>
+</div>
 </section>
