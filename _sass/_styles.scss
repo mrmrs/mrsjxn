@@ -34,7 +34,7 @@
 }
 
 body {
-  font-family:"proxima nova", helvetica,arial,sans-serif;
+  font-family:"proxima-nova", helvetica, arial, sans-serif;
   position:relative;
   background:#efefef;
 }
@@ -135,7 +135,7 @@ a:visited {text-decoration:none;}
 // Iphone 5: All
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 568px) { 
+and (max-device-width : 568px) {
   .sc-play,
   .sc-pause {
     width:48px; 
