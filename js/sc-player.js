@@ -370,8 +370,8 @@
         // cache the references to most updated DOM nodes in the progress bar
         updates = {
           $buffer: $('.sc-buffer', player),
-          $played: $('.sc-artwork-list span img', player),
-          $playedalt: $('.sc-info h3 a', player),
+          $played: $('.sc-played', player),
+          $playedbgfade: $('.img-wrapper > img'),
           position:  $('.sc-position', player)[0]
         };
         updatePlayStatus(player, true);
@@ -384,8 +384,9 @@
       onFinish = function() {
         var $player = updates.$played.closest('.sc-player'),
             $nextItem;
-        // update the scrubber background color
-        updates.$played.css('-webkit-filter', 'grayscale(1)');
+        // update the scrubber width
+        updates.$played.css('width', '0%');
+        updates.$playedbgfade.css('-webkit-filter', 'grayscale(1)');
         // show the position in the track position counter
         updates.position.innerHTML = timecode(0);
         // reset the player state
@@ -449,12 +450,10 @@
               position = audioEngine.getPosition(),
               relative = (position / duration);
 
+            var relativeInverse = 100 - (100 * relative);
           // update the scrubber width
-          //
-          var grayscaleValue = 100 - (100 * relative);
-          var relativeOpacity = 1 * relative;
-          updates.$played.css('-webkit-filter', 'grayscale('+grayscaleValue+'%)');
-          updates.$playedalt.css('opacity', relativeOpacity);
+          updates.$played.css('width', (100 * relative) + '%');
+          updates.$playedbgfade.css('-webkit-filter', 'grayscale('+relativeInverse+'%)');
           // show the position in the track position counter
           updates.position.innerHTML = timecode(position);
           // announce the track position to the DOM
@@ -491,7 +490,7 @@
         sourceClasses = $source[0].className.replace('sc-player', ''),
         links = opts.links || $.map($('a', $source).add($source.filter('a')), function(val) { return {url: val.href, title: val.innerHTML}; }),
         $player = $('<div class="sc-player loading"></div>').data('sc-player', {id: playerId}),
-        $artworks = $('<div class="sc-artwork-list"></div>').appendTo($player),
+        $artworks = $('<ol class="sc-artwork-list"></ol>').appendTo($player),
         $info = $('<div class="sc-info"><h3></h3><h4></h4><p></p><a href="#" class="sc-info-close">X</a></div>').appendTo($player),
         $controls = $('<div class="sc-controls"></div>').appendTo($player),
         $list = $('<ol class="sc-trackslist"></ol>').appendTo($player);
@@ -530,7 +529,7 @@
             // create an item in the playlist
             $('<li><a href="' + track.permalink_url +'">' + track.title + '</a><span class="sc-track-duration">' + timecode(track.duration) + '</span></li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
             // create an item in the artwork list
-            $('<span></span>')
+            $('<li></li>')
               .append(artworkImage(track, index >= opts.loadArtworks))
               .appendTo($artworks)
               .toggleClass('active', active)

@@ -1,18 +1,6 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-  {% include _head.html %}
-<body>
-  <section class="single-column">
-  <div class="float-container">
-  <article class="post flf">
-    <!-- This is where post content lives -->
-    {{content}}
-    <!-- end of post content -->
-  </article>
-  </div>
-  </section>
-  {% include _related_posts.html %}
-  {% include _navigation.html %}
-  {% include _footer.html %}
-</body>
+{% include _head.html %}
+  <body>
+    {{ content }}
+    {% include _js.html %}
+  </body>
 </html>
