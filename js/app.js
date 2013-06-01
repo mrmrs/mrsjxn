@@ -2,8 +2,8 @@
 
 var mrsjxn = angular.module('mrsjxn', []).
   config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'partials/tracklist.html'});
-    $routeProvider.when('/:view', {templateUrl: 'partials/tracklist.html'});
+    $routeProvider.when('/', {templateUrl: 'partials/main.html'});
+    $routeProvider.when('/:view', {templateUrl: 'partials/main.html'});
     $routeProvider.otherwise({ redirectTo: '/' });
   }]);
 
@@ -108,10 +108,24 @@ mrsjxn.filter('playTime', function() {
       }; 
     };
   });
-  
-// Main Controller  
-mrsjxn.controller('MrsjxnCtrl', ['$scope', '$location', '$routeParams', '$anchorScroll', 'soundcloud', 'player', 'audio', function($scope, $location, $routeParams, $anchorScroll, soundcloud, player, audio) {
 
+////////////////////////////////////////////////////////////////
+// Controllers
+  
+// Main Controller
+mrsjxn.controller('MainCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+  
+    if($routeParams.view){
+      $scope.view = $routeParams.view;  
+    } else {
+      $scope.view = 'mrsjxn';
+    };
+    
+}]);
+
+// Tracklist Controller
+mrsjxn.controller('TracklistCtrl', ['$scope', '$location', '$anchorScroll', 'soundcloud', 'player', 'audio', function($scope, $location, $anchorScroll, soundcloud, player, audio) {
+    
     $scope.contentLoading = true;
     
     $scope.audio = audio;
@@ -120,21 +134,12 @@ mrsjxn.controller('MrsjxnCtrl', ['$scope', '$location', '$routeParams', '$anchor
     $scope.pageSize = 32;
     $scope.pageOffset = 0;
     $scope.page = 1;
-    console.log('controller');
     
     $scope.updatePage = function(){
       $scope.page = ($scope.pageOffset + $scope.pageSize) / $scope.pageSize;
     };
-    
-    if($routeParams.view){
-      $scope.view = $routeParams.view;  
-    } else {
-      $scope.view = 'mrsjxn';
-    };
-    
-    
-    $scope.scget = '/users/' + $scope.view + '/tracks';
-    
+
+    $scope.scget = '/users/' + $scope.view + '/tracks';   
     soundcloud.getTracks($scope);
     
     $scope.nextPage = function(){
@@ -160,7 +165,8 @@ mrsjxn.controller('MrsjxnCtrl', ['$scope', '$location', '$routeParams', '$anchor
     };
       
   }]);
-  
+
+// Player Scrubber Control  
 mrsjxn.controller('ScrubberCtrl', ['$scope', 'audio', function($scope, audio){
       
       function updateScrubber() {
