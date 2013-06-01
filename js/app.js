@@ -128,6 +128,8 @@ mrsjxn.controller('TracklistCtrl', ['$scope', '$location', '$anchorScroll', 'sou
     
     $scope.contentLoading = true;
     
+    // To do: Try empty state tracks json object for loading states.
+    
     $scope.audio = audio;
     $scope.player = player;
     
