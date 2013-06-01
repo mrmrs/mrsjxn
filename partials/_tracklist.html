@@ -24,12 +24,12 @@
     
   </div>
   
-  <div class="tappad tappad-mob padle padri bo-ltgry overhide txtcen">
+  <div class="tappad tappad-mob padle padri bo-ltgry overhide txtcen" ng-hide="!hasPrevPage && !hasNextPage">
   
-    <a class="fl tappad h2" ng-class="{mdgry: pageOffset < pageSize}" href="" ng-click="prevPage()">Previous</a>
+    <a class="fl tappad h2" ng-class="{mdgry: !hasPrevPage}" href="" ng-click="prevPage()">Previous</a>
     
     <span class="mdgry">Page: {{page}}</span>
     
-    <a class="fr tappad h2" ng-class="{mdgry: tracks.length < pageSize}" href="" ng-click="nextPage()">Next</a>
+    <a class="fr tappad h2" ng-class="{mdgry: !hasNextPage}" href="" ng-click="nextPage()">Next</a>
   </div>
   
