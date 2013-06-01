@@ -25,6 +25,8 @@ mrsjxn.factory('soundcloud', function() {
             $scope.$apply(function () {
               $scope.tracks = data;
               $scope.contentLoading = false;
+              $scope.hasPrevPage = ($scope.pageOffset >= $scope.pageSize);
+              $scope.hasNextPage = ($scope.tracks.length >= $scope.pageSize);
             });      
           });
         }       
@@ -132,6 +134,7 @@ mrsjxn.controller('TracklistCtrl', ['$scope', '$location', '$anchorScroll', 'sou
     
     $scope.audio = audio;
     $scope.player = player;
+    $scope.tracks = [];
     
     $scope.pageSize = 32;
     $scope.pageOffset = 0;
@@ -145,7 +148,7 @@ mrsjxn.controller('TracklistCtrl', ['$scope', '$location', '$anchorScroll', 'sou
     soundcloud.getTracks($scope);
     
     $scope.nextPage = function(){
-      if($scope.tracks.length >= $scope.pageSize){
+      if($scope.hasNextPage){
         $scope.contentLoading = true;
         $scope.pageOffset = $scope.pageOffset + $scope.pageSize;
         $scope.updatePage();
@@ -156,7 +159,7 @@ mrsjxn.controller('TracklistCtrl', ['$scope', '$location', '$anchorScroll', 'sou
     };
     
     $scope.prevPage = function(){
-      if($scope.pageOffset >= $scope.pageSize) {
+      if($scope.hasPrevPage) {
         $scope.contentLoading = true;
         $scope.pageOffset = $scope.pageOffset - $scope.pageSize;
         $scope.updatePage();
