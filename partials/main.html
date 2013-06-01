@@ -1,0 +1,12 @@
+
+<div ng-switch="view" ng-controller="MainCtrl">
+
+  <div class="bg-mdgry">
+    <div ng-switch-when="mr_mrs" ng-include src="'partials/_tracklist.html'" id="tracklist" ng-controller="TracklistCtrl"></div>
+  </div>
+
+  <div ng-switch-when="mrsjxn" ng-include src="'partials/_tracklist.html'" id="tracklist" ng-controller="TracklistCtrl"></div>
+
+  <div ng-switch-when="jxnblk" ng-include src="'partials/_tracklist.html'" id="tracklist" ng-controller="TracklistCtrl"></div>
+
+</div>
