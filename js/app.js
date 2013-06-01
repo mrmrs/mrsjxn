@@ -1,60 +1,39 @@
 'use strict';
 
-var jxnblk = angular.module('jxnblk', []).
+var mrsjxn = angular.module('mrsjxn', []).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'partials/tracklist.html'});
-    //$routeProvider.when('/:page', {templateUrl: 'partials/tracklist.html'});
+    $routeProvider.when('/:view', {templateUrl: 'partials/tracklist.html'});
     $routeProvider.otherwise({ redirectTo: '/' });
   }]);
 
-var clientID = '2474d3fa85c52e6264d9b599cf7214ab';
+// Mrsjxn API account registered under Jxnblk's SoundCloud Account
+var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6';
 
-jxnblk.factory('soundcloud', function() {
+mrsjxn.factory('soundcloud', function() {
      
     SC.initialize({
       client_id: clientID,
-      redirect_uri: 'http:/jxnblk.com/music'
+      redirect_uri: 'http:/mrsjxn.com'
     });
     
     return {
       clientID: clientID,
-    
-      getTracks:  function($scope){                
-                    SC.get($scope.scget, {limit: $scope.pageSize, offset: $scope.pageOffset}, function(data){
-                      $scope.$apply(function () {
-                        $scope.tracks = data;
-                        $scope.contentLoading = false;
-                      });      
-                    });
-      }   
-      
-/*
-      getTrack:   function($scope){
-                    SC.get('/resolve.json?url=' + $scope.trackURL , function(data){
-                     $scope.$apply(function () {
-                       $scope.track = data;
-                       $scope.tracksLoading = false;
-                     });
-                    });
-      },
-*/
-      
-/*
-      resolve:    function($scope, params){
-                    SC.get('/resolve.json?url=http://soundcloud.com' + $scope.urlPath , function(data){
-                     $scope.$apply(function () {
-                       $scope.resolveData = data;
-                     });
-                    });
-      }
-*/
-      
+      getTracks:
+        function($scope){                
+          SC.get($scope.scget, {limit: $scope.pageSize, offset: $scope.pageOffset}, function(data){
+            $scope.$apply(function () {
+              $scope.tracks = data;
+              $scope.contentLoading = false;
+            });      
+          });
+        }       
     };
     
   });
   
   
-jxnblk.factory('player', function($rootScope, audio, soundcloud) {
+mrsjxn.factory('player', function($rootScope, audio, soundcloud) {
     var player,
         tracks,
         i,
@@ -109,13 +88,13 @@ jxnblk.factory('player', function($rootScope, audio, soundcloud) {
     return player;
   });
    
-jxnblk.factory('audio', function($document, $rootScope) {
+mrsjxn.factory('audio', function($document, $rootScope) {
     var audio = $document[0].createElement('audio');  
     return audio;
   });
   
-  
-jxnblk.filter('playTime', function() {
+// Filter to display hours, minutes and seconds  
+mrsjxn.filter('playTime', function() {
     return function(ms) {
       var hours = Math.floor(ms / 36e5),
           mins = '0' + Math.floor((ms % 36e5) / 6e4),
@@ -130,8 +109,8 @@ jxnblk.filter('playTime', function() {
     };
   });
   
-  
-jxnblk.controller('JxnblkCtrl', ['$scope', '$location', '$anchorScroll', 'soundcloud', 'player', 'audio', function($scope, $location, $anchorScroll, soundcloud, player, audio) {
+// Main Controller  
+mrsjxn.controller('MrsjxnCtrl', ['$scope', '$location', '$routeParams', '$anchorScroll', 'soundcloud', 'player', 'audio', function($scope, $location, $routeParams, $anchorScroll, soundcloud, player, audio) {
 
     $scope.contentLoading = true;
     
@@ -147,7 +126,14 @@ jxnblk.controller('JxnblkCtrl', ['$scope', '$location', '$anchorScroll', 'soundc
       $scope.page = ($scope.pageOffset + $scope.pageSize) / $scope.pageSize;
     };
     
-    $scope.scget = '/users/jxnblk/tracks'
+    if($routeParams.view){
+      $scope.view = $routeParams.view;  
+    } else {
+      $scope.view = 'mrsjxn';
+    };
+    
+    
+    $scope.scget = '/users/' + $scope.view + '/tracks';
     
     soundcloud.getTracks($scope);
     
@@ -175,7 +161,7 @@ jxnblk.controller('JxnblkCtrl', ['$scope', '$location', '$anchorScroll', 'soundc
       
   }]);
   
-jxnblk.controller('ScrubberCtrl', ['$scope', 'audio', function($scope, audio){
+mrsjxn.controller('ScrubberCtrl', ['$scope', 'audio', function($scope, audio){
       
       function updateScrubber() {
         $scope.$apply(function() {
