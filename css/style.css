@@ -620,7 +620,10 @@ a:hover {
   box-shadow: 0 0 1px 1px #00ccff; }
 
 .bg-jxnblk {
-  background-image: url(images/jxnblk.jpg); }
+  background-image: url(/images/jxnblk.jpg); }
+
+.bg-speckles {
+  background: transparent url(/images/background.jpg) no-repeat; }
 
 .bg-center {
   background-position: center; }
@@ -630,6 +633,9 @@ a:hover {
 
 .bg-contain {
   background-size: contain; }
+
+.bg-mrsjxn-faces {
+  background: transparent url(/images/mrsjxn.png) no-repeat center center; }
 
 /*
 

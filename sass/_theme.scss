@@ -95,14 +95,15 @@ a:hover {
 
 // Jxnblk.com photo
 
-.bg-jxnblk { background-image: url(images/jxnblk.jpg); }
+.bg-jxnblk { background-image: url(/images/jxnblk.jpg); }
 
 //.bg-jxn { background-image: url(images/Jackson-q60.jpg); }
 
 //.bg-microbeats { background-image: url(images/microbeats.jpg); }
 
-.bg-center  { background-position: center; }
+.bg-speckles {background:transparent url(/images/background.jpg) no-repeat;}
 
+.bg-center  { background-position: center;}
 .bg-cover   { background-size: cover; }
 .bg-contain { background-size: contain; }
-
+.bg-mrsjxn-faces {background:transparent url(/images/mrsjxn.png) no-repeat center center;}
