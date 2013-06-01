@@ -1,0 +1,40 @@
+
+<div id="tracklist" ng-controller="JxnblkCtrl">
+  
+  <div ng-show="contentLoading" class="h2 h2-tab mdgry pad2 txtcen">Loading...</div>
+  
+  <div ng-hide="contentLoading" ng-repeat="track in tracks" id="{{track.permalink}}" class="bobo bo-ltgry media" ng-class="{wht: player.playing.id == track.id || player.paused.id == track.id}">
+    
+    <div class="img">
+      <a href="" class="play disb sq64 txtcen" ng-class="{mdgry: player.paused.id != track.id, 'btn-link': player.paused.id == track.id}" ng-click="player.play(tracks, $index)" ng-hide="player.playing.id == track.id"><i class="icon icon-geo-play sq64-txt h2 disb"></i></a>
+      <a href="" class="pause disb sq64 txtcen btn-link" ng-click="player.pause(track)" ng-show="player.playing.id == track.id"><i class="icon icon-geo-pause sq64-txt h2 disb"></i></a>  <!-- ►  /  ❚ ❚ -->
+    </div>
+    
+    <div class="bd posrel minhi64" ng-switch="player.playing.id == track.id || player.paused.id == track.id">
+      <h2 class="h2 h2-tab sq64-txt marle marri2 posrel z3 truncate text-adjust-none">{{track.title}}</h2>
+      <div class="posabs fill bg-mdgry" ng-switch-when="true" ng-controller="ScrubberCtrl">      
+        <div class="posabs fill z5" ng-click="seekTo($event)"></div>
+        <div class="posabs to0 bo0 l0 bg-dkgry" style="width: {{currentBufferPercentage}}%"></div>
+        <div class="posabs to0 bo0 l0 bg-link" style="width: {{currentTimePercentage}}%"></div>
+        <p class="posabs to0 ri1 small anim-fast slide-left" ng-show="audio.readyState >= 3">{{currentTimeMS | playTime}} | {{durationMS | playTime}}</p>
+      </div>
+    </div>
+    
+    <div class="bg-ltgry tappad padle padri" ng-show="player.playing.id == track.id || player.paused.id == track.id">
+      <a ng-href="{{track.permalink_url}}" class="disb tappad mdgry truncate" target="_blank">View on SoundCloud</a>
+    </div>
+    
+  </div>
+  
+  <div class="tappad tappad-mob padle padri bo-ltgry overhide txtcen">
+  
+    <a class="fl tappad h2" ng-class="{mdgry: pageOffset < pageSize}" href="" ng-click="prevPage()">Previous</a>
+    
+    <span class="mdgry">Page: {{page}}</span>
+    
+    <a class="fr tappad h2" ng-class="{mdgry: tracks.length < pageOffset}" href="" ng-click="nextPage()">Next</a>
+  </div>
+  
+  <!-- <pre>{{tracks | json}}</pre> -->
+  
+</div>

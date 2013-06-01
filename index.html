@@ -1,17 +1,51 @@
----
-layout: default
----
-<header class="dk header">
-  <h1 class="h1">MRSJXN</h1>
-  <h2 class="h2">post future music</h2>
-</header>
-<section>
-<div class="relative">
-  <div class="player-container">
-    <div class="img-wrapper">
-      <img src="{{site.url}}/img/meissner-effect.jpg">
-    </div>
-    <a href="https://soundcloud.com/mrsjxn/" class="sc-player">MRMRS</a>
-  </div>
-</div>
-</section>
+<!DOCTYPE html> 
+<html lang="en" ng-app="jxnblk"> 
+<head>
+	<meta charset="utf-8">
+  <title>Jxnblk</title>
+	<meta name="author" content="Brent Jackson">
+	<meta name="description" content="Time Traveler">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="http://jxnblk.com/geo/style.css" />
+	
+	<script type="text/javascript" src="//use.typekit.net/dqc3cyh.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4603832-6']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</head>
+<body>
+
+
+  <header class="maxwi1024 wrap bg-dkgry bg-jxnblk bg-center bg-cover padto2 padbo2 txtcen">
+    <img class="wi100 padto2 padri marbo padle bobox" src="images/jxnblk.svg" />
+    <h2 class="h2-tab caps maxwi100 padbo2 wht">Time Traveler</h2>
+  </header>
+
+
+  <article class="maxwi1024 wrap " ng-view></article>
+
+  
+  <footer class="maxwi1024 wrap pad">
+    <p class="small mdgry">Powered by SoundCloud</p>
+  </footer>
+  
+  <script src="//connect.soundcloud.com/sdk.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
