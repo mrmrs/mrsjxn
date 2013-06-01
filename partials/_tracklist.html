@@ -1,6 +1,4 @@
 
-<!-- <div id="tracklist" ng-controller="TracklistCtrl"> -->
-  
   <div ng-show="contentLoading" class="h2 h2-tab mdgry pad2 txtcen">Loading...</div>
   
   <div ng-hide="contentLoading" ng-repeat="track in tracks" id="{{track.permalink}}" class="bobo bo-ltgry media" ng-class="{wht: player.playing.id == track.id || player.paused.id == track.id}">
@@ -32,9 +30,6 @@
     
     <span class="mdgry">Page: {{page}}</span>
     
-    <a class="fr tappad h2" ng-class="{mdgry: tracks.length < pageOffset}" href="" ng-click="nextPage()">Next</a>
+    <a class="fr tappad h2" ng-class="{mdgry: tracks.length < pageSize}" href="" ng-click="nextPage()">Next</a>
   </div>
   
-  <!-- <pre>{{tracks | json}}</pre> -->
-  
-<!-- </div> -->
