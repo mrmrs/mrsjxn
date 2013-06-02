@@ -65,3 +65,11 @@
 .trans-med   { -webkit-transition-duration: .2s; }
 .trans-slow  { -webkit-transition-duration: .5s; }
 .trans-slow2 { -webkit-transition-duration: 2s; }
+
+.scale-hov {
+      -webkit-transition:-webkit-transform ease-in .5s, color ease-in-out .3s;
+  &:hover {
+      -webkit-transform:scale(1.2);
+      -webkit-transition:-webkit-transform ease-in-out .3s, color ease-in-out .3s;
+  }
+}
