@@ -21,9 +21,12 @@
   </div>
 </div>
   <nav class="disblo txtcen tappad posabs bo0 ri0 le0 caps">
-    <a href="" ng-click="changeView('mr_mrs')" class="wht fl padle padri">Mrmrs</a>
-    <a href="" ng-click="changeView('mrsjxn')" class="wht padle padri">Mrsjxn</a>
-    <a href="" ng-click="changeView('jxnblk')" class="wht fr padle padri">Jxnblk</a>
+    <a href="" ng-click="changeView('mr_mrs')" class="wht fl padle padri scale-hov" 
+       ng-class="{'bg-dim-white no-hover': view == 'mr_mrs', 'scale-hov': view != 'mr_mrs'}">Mrmrs</a>
+    <a href="" ng-click="changeView('mrsjxn')" class="wht padle padri disib" 
+       ng-class="{'bg-dim-white no-hover': view == 'mrsjxn','scale-hov': view != 'mrsjxn'}">Mrsjxn</a>
+    <a href="" ng-click="changeView('jxnblk')" class="wht fr padle padri" 
+       ng-class="{'bg-dim-white no-hover': view == 'jxnblk', 'scale-hov': view != 'jxnblk'}">Jxnblk</a>
   </nav>
 </header>
 
@@ -63,10 +66,11 @@
   </div>
   
 
-  <footer class="wi100 bg-link txtcen marto boto bo-dkltgry">
+  <footer class="wi100 bg-link txtcen">
     <div class="bg-wht pad marbo">
       <p > 
         <a href="http://mrmrs.cc" title="Adam Morse">MRMRS</a> 
+        &amp; 
         <a href="http://jxnblk.com" title="Jackson Black">JXNBLK</a> 
       </p>
     </div>

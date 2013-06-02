@@ -253,3 +253,7 @@ a:hover {
     -webkit-transition:-webkit-transform .4s;
   }
 }
+
+.bg-dim-white { background:rgba(255,255,255,0.2); }
+
+.no-hover:hover { color:#fff!important; }
