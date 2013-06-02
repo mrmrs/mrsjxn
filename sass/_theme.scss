@@ -154,8 +154,6 @@ a:hover {
   width: 50%;
 }
 
-
-
 .invert {
   -webkit-filter: invert(100%);
   filter: invert(100%);
@@ -163,9 +161,7 @@ a:hover {
 
 .title {}
 
-.title-pad {
-
-}
+.title-pad { }
 
 .title-mr {
   padding-left: 31.579%;
@@ -213,60 +209,43 @@ a:hover {
   right: -50%; 
 }
 
-/*
-.logo {
-  width:50%;
-  float:left;
-  height:60px;
-  margin-top:100px;
-  outline:1px solid gold;
-  max-height:60px;
-  img {max-height:100%;max-width:100%;}
-}
-
-.logo--right {
-  img {right:-100%;}
-}
-
-.logo--left {
-  img {left:-100%; }
-}
-*/
-
 .nav-link {
   padding:20px;
   background:$ltgry;
   text-transform:uppercase;
 }
 
+
+
+/* ==========================================================================
+   TOUCH ICONS
+   ========================================================================== */
+
 .twitter {
   background:url(/images/twitter.svg) no-repeat 0 0;
-  background-size:48px 48px;
-  color:#fff!important;
-  line-height:48px;
-  text-indent:-9999px;
-  position:relative;
   left:5px;
-  -webkit-transition:-webkit-transform .4s;
   &:hover {
-    -webkit-transition:-webkit-transform .4s;
     -webkit-transform:rotate(16deg);
   }
 }
 
 .soundcloud {
   background:url(/images/soundcloud.svg) no-repeat 0 0;
-  background-size:48px 48px;
-  color:#fff!important;
-  line-height:48px;
-  position:relative;
   left:-5px;
-  text-indent:-9999px;
-  -webkit-transition:-webkit-transform .4s;
   &:hover {
-    -webkit-transition:-webkit-transform .5s;
     -webkit-transform:rotate(-16deg);
   }
 }
 
-
+.touch-icon {
+  text-indent:-9999px;
+  background-size:48px 48px;
+  position:relative;
+  -webkit-transition:-webkit-transform ease-in-out .5s;
+  -webkit-backface-visibility: hidden;
+  line-height:48px;
+  color:#fff!important;
+  &:hover {
+    -webkit-transition:-webkit-transform .4s;
+  }
+}
