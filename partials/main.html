@@ -3,36 +3,37 @@
     <div class="overhide posabs fill">
       <div class="bg-mrs-face bg-cover posabs to0 bo0 trans-all trans-slow2" 
         ng-class="{'header-bg-full': view == 'mr_mrs', 'header-bg-left': view == 'mrsjxn', 'header-bg-off-left': view == 'jxnblk'}"></div>
-  <div class="bg-jxn-face bg-cover posabs to0 bo0 trans-all trans-slow2" ng-class="{'header-bg-off-right': view == 'mr_mrs', 'header-bg-right': view == 'mrsjxn', 'header-bg-full': view == 'jxnblk'}"></div>
-</div>
+      <div class="bg-jxn-face bg-cover posabs to0 bo0 trans-all trans-slow2"
+        ng-class="{'header-bg-off-right': view == 'mr_mrs', 'header-bg-right': view == 'mrsjxn', 'header-bg-full': view == 'jxnblk'}"></div>
+    </div>
 
-<div class="title to40 overhide posabs fill">
-  <div class="title-pad wi30 trans-all trans-slow" 
-       ng-class="{'title-off-left': view != 'mr_mrs', 'title-left': view == 'mr_mrs'}">
-          <img class="title-mr wi100 bobox invert" src="images/logo-mr.svg">
-  </div>
-  <div class="title-pad wi30 trans-all trans-slow" 
-       ng-class="{'title-right': view == 'mr_mrs', 'title-left': view == 'mrsjxn', 'title-off-left': view == 'jxnblk'}">
-          <img class="title-mrs wi100 bobox invert" src="images/logo-mrs.svg">
-  </div>
-  <div class="title-pad wi30 trans-all trans-slow" 
-       ng-class="{'title-off-right': view == 'mr_mrs', 'title-right': view == 'mrsjxn', 'title-left': view == 'jxnblk'}">
-          <img class="title-jxn wi100 bobox invert trans-all trans-slow" src="images/logo-jxn.svg">
-  </div>
-  <div class="title-pad wi30 trans-all trans-slow" 
-     ng-class="{'title-off-right': view != 'jxnblk', 'title-right': view == 'jxnblk'}">
-        <img class="title-blk wi100 bobox invert" src="images/logo-blk.svg">
-  </div>
-</div>
-  <nav class="disblo txtcen tappad posabs bo0 ri0 le0 caps">
-    <a href="" ng-click="changeView('mr_mrs')" class="wht fl padle padri scale-hov" 
-       ng-class="{'bg-dim-white no-hover': view == 'mr_mrs', 'scale-hov': view != 'mr_mrs'}">Mrmrs</a>
-    <a href="" ng-click="changeView('mrsjxn')" class="wht padle padri disib" 
-       ng-class="{'bg-dim-white no-hover': view == 'mrsjxn','scale-hov': view != 'mrsjxn'}">Mrsjxn</a>
-    <a href="" ng-click="changeView('jxnblk')" class="wht fr padle padri" 
-       ng-class="{'bg-dim-white no-hover': view == 'jxnblk', 'scale-hov': view != 'jxnblk'}">Jxnblk</a>
-  </nav>
-</header>
+    <div class="title to40 overhide posabs fill">
+      <div class="title-pad wi30 trans-all trans-slow" 
+           ng-class="{'title-off-left': view != 'mr_mrs', 'title-left': view == 'mr_mrs'}">
+              <img class="title-mr wi100 bobox" src="images/logo-mr.svg">
+      </div>
+      <div class="title-pad wi30 trans-all trans-slow" 
+           ng-class="{'title-right': view == 'mr_mrs', 'title-left': view == 'mrsjxn', 'title-off-left': view == 'jxnblk'}">
+              <img class="title-mrs wi100 bobox" src="images/logo-mrs.svg">
+      </div>
+      <div class="title-pad wi30 trans-all trans-slow" 
+           ng-class="{'title-off-right': view == 'mr_mrs', 'title-right': view == 'mrsjxn', 'title-left': view == 'jxnblk'}">
+              <img class="title-jxn wi100 bobox trans-all trans-slow" src="images/logo-jxn.svg">
+      </div>
+      <div class="title-pad wi30 trans-all trans-slow" 
+         ng-class="{'title-off-right': view != 'jxnblk', 'title-right': view == 'jxnblk'}">
+            <img class="title-blk wi100 bobox" src="images/logo-blk.svg">
+      </div>
+    </div>
+    <nav class="disblo txtcen tappad posabs bo0 ri0 le0 caps">
+      <a href="" ng-click="changeView('mr_mrs')" class="wht fl padle padri scale-hov" 
+         ng-class="{'bg-dim-white no-hover': view == 'mr_mrs', 'scale-hov': view != 'mr_mrs'}">Mrmrs</a>
+      <a href="" ng-click="changeView('mrsjxn')" class="wht padle padri disib" 
+         ng-class="{'bg-dim-white no-hover': view == 'mrsjxn','scale-hov': view != 'mrsjxn'}">Mrsjxn</a>
+      <a href="" ng-click="changeView('jxnblk')" class="wht fr padle padri" 
+         ng-class="{'bg-dim-white no-hover': view == 'jxnblk', 'scale-hov': view != 'jxnblk'}">Jxnblk</a>
+    </nav>
+  </header>
 
 
   <div ng-show="contentLoading" class="h2 h2-tab mdgry pad2 txtcen">Loading...</div>
