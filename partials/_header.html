@@ -7,16 +7,16 @@
 </div>
 
 <div class="title to40 overhide posabs fill">
-  <div class="title-pad title-off-left wi30 trans-all trans-med">
+  <div class="title-pad wi30 trans-all trans-med" ng-class="{'title-off-left': view != 'mr_mrs', 'title-left': view == 'mr_mrs'}">
     <img class="title-mr wi100 bobox invert trans-all trans-med" src="images/logo-mr.svg" />
   </div>
-  <div class="title-pad title-left wi30 trans-all trans-med">
+  <div class="title-pad wi30 trans-all trans-med" ng-class="{'title-right': view == 'mr_mrs', 'title-left': view == 'mrsjxn', 'title-off-left': view == 'jxnblk'}">
     <img class="title-mrs wi100 bobox invert trans-all trans-med" src="images/logo-mrs.svg" />
   </div>
-  <div class="title-pad title-right wi30 trans-all trans-med">
+  <div class="title-pad wi30 trans-all trans-med" ng-class="{'title-off-right': view == 'mr_mrs', 'title-right': view == 'mrsjxn', 'title-left': view == 'jxnblk'}">
     <img class="title-jxn wi100 bobox invert trans-all trans-med" src="images/logo-jxn.svg" />
   </div>
-  <div class="title-pad title-off-right wi30 trans-all trans-med">
+  <div class="title-pad wi30 trans-all trans-med" ng-class="{'title-off-right': view != 'jxnblk', 'title-right': view == 'jxnblk'}">
     <img class="title-blk wi100 bobox invert trans-all trans-med" src="images/logo-blk.svg" />
   </div>
 </div>
