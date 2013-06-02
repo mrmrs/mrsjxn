@@ -55,3 +55,13 @@
 
 /* Bug fix: Stops safari from flickering on hover */
 .no-flick{-webkit-transform:translate3d(0,0,0);}
+
+.trans-all {
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease;
+}
+
+.trans-fast  { -webkit-transition-duration: .1s; }
+.trans-med   { -webkit-transition-duration: .2s; }
+.trans-slow  { -webkit-transition-duration: .5s; }
+.trans-slow2 { -webkit-transition-duration: 2s; }

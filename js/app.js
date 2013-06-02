@@ -117,6 +117,8 @@ mrsjxn.filter('playTime', function() {
 // Main Controller
 mrsjxn.controller('MainCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
   
+    console.log('main controller');
+  
     if($routeParams.view){
       $scope.view = $routeParams.view;  
     } else {
@@ -190,4 +192,14 @@ mrsjxn.controller('ScrubberCtrl', ['$scope', 'audio', function($scope, audio){
         audio.currentTime = (xpos * audio.duration);
       };
   }]);
+  
+  
+// Header
+
+//var header = angular.module('header', []);
+
+mrsjxn.controller('HeaderCtrl', ['$scope', function($scope){
+  console.log('header controller');
+  
+}]);
   
