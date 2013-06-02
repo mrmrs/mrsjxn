@@ -113,22 +113,9 @@ mrsjxn.filter('playTime', function() {
 
 ////////////////////////////////////////////////////////////////
 // Controllers
-  
-// Main Controller
-mrsjxn.controller('MainCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
-  
-    console.log('main controller');
-  
-    if($routeParams.view){
-      $scope.view = $routeParams.view;  
-    } else {
-      $scope.view = 'mrsjxn';
-    };
-    
-}]);
 
-// Tracklist Controller
-mrsjxn.controller('TracklistCtrl', ['$scope', '$location', '$anchorScroll', 'soundcloud', 'player', 'audio', function($scope, $location, $anchorScroll, soundcloud, player, audio) {
+// Main Controller
+mrsjxn.controller('MainCtrl', ['$scope', '$location', '$anchorScroll', 'soundcloud', 'player', 'audio', function($scope, $location, $anchorScroll, soundcloud, player, audio) {
     
     $scope.contentLoading = true;
     
@@ -137,17 +124,29 @@ mrsjxn.controller('TracklistCtrl', ['$scope', '$location', '$anchorScroll', 'sou
     $scope.audio = audio;
     $scope.player = player;
     $scope.tracks = [];
+    $scope.view = 'mrsjxn';
     
     $scope.pageSize = 32;
     $scope.pageOffset = 0;
     $scope.page = 1;
-    
     $scope.updatePage = function(){
       $scope.page = ($scope.pageOffset + $scope.pageSize) / $scope.pageSize;
     };
-
-    $scope.scget = '/users/' + $scope.view + '/tracks';   
-    soundcloud.getTracks($scope);
+    
+    $scope.updateTracks = function(){
+      $scope.scget = '/users/' + $scope.view + '/tracks';   
+      soundcloud.getTracks($scope);  
+    };
+    
+    $scope.updateTracks();
+    
+    $scope.changeView = function(view) {
+      $scope.contentLoading = true;
+      $scope.pageOffset = 0;
+      $scope.page = 1;
+      $scope.view = view;
+      $scope.updateTracks();
+    };
     
     $scope.nextPage = function(){
       if($scope.hasNextPage){
@@ -192,14 +191,4 @@ mrsjxn.controller('ScrubberCtrl', ['$scope', 'audio', function($scope, audio){
         audio.currentTime = (xpos * audio.duration);
       };
   }]);
-  
-  
-// Header
-
-//var header = angular.module('header', []);
-
-mrsjxn.controller('HeaderCtrl', ['$scope', function($scope){
-  console.log('header controller');
-  
-}]);
   
