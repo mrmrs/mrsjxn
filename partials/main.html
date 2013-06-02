@@ -1,19 +1,6 @@
 
-<div ng-switch="view" ng-controller="MainCtrl">
+<div ng-controller="MainCtrl">
 
-  <div class="bg-mdgry">
-    <h2>Mrmrs</h2>
-    <div ng-switch-when="mr_mrs" ng-include src="'partials/_tracklist.html'" id="tracklist" ng-controller="TracklistCtrl"></div>
-  </div>
-
-  <div class="">
-    <h2>Mrsjxn</h2>
-    <div ng-switch-when="mrsjxn" ng-include src="'partials/_tracklist.html'" id="tracklist" ng-controller="TracklistCtrl"></div>
-  </div>
-  
-  <div class="bg-ltgry">
-    <h2>Jxnblk</h2>
-    <div ng-switch-when="jxnblk" ng-include src="'partials/_tracklist.html'" id="tracklist" ng-controller="TracklistCtrl"></div>
-  </div>
+   <div ng-include src="'partials/_tracklist.html'" id="tracklist" ng-controller="TracklistCtrl"></div>
 
 </div>
