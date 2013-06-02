@@ -1,8 +1,81 @@
 
 <div ng-controller="MainCtrl">
+<div class="overhide posabs fill">
+  <div class="bg-mrs-face bg-cover posabs to0 bo0 trans-all trans-slow2" ng-class="{'header-bg-full': view == 'mr_mrs', 'header-bg-left': view == 'mrsjxn', 'header-bg-off-left': view == 'jxnblk'}"></div>
+  <div class="bg-jxn-face bg-cover posabs to0 bo0 trans-all trans-slow2" ng-class="{'header-bg-off-right': view == 'mr_mrs', 'header-bg-right': view == 'mrsjxn', 'header-bg-full': view == 'jxnblk'}"></div>
+</div>
+
+<div class="title to40 overhide posabs fill">
+  <div class="title-pad wi30 trans-all trans-slow" ng-class="{'title-off-left': view != 'mr_mrs', 'title-left': view == 'mr_mrs'}">
+    <img class="title-mr wi100 bobox invert" src="images/logo-mr.svg" />
+  </div>
+  <div class="title-pad wi30 trans-all trans-slow" ng-class="{'title-right': view == 'mr_mrs', 'title-left': view == 'mrsjxn', 'title-off-left': view == 'jxnblk'}">
+    <img class="title-mrs wi100 bobox invert" src="images/logo-mrs.svg" />
+  </div>
+  <div class="title-pad wi30 trans-all trans-slow" ng-class="{'title-off-right': view == 'mr_mrs', 'title-right': view == 'mrsjxn', 'title-left': view == 'jxnblk'}">
+    <img class="title-jxn wi100 bobox invert trans-all trans-slow" src="images/logo-jxn.svg" />
+  </div>
+  <div class="title-pad wi30 trans-all trans-slow" ng-class="{'title-off-right': view != 'jxnblk', 'title-right': view == 'jxnblk'}">
+    <img class="title-blk wi100 bobox invert" src="images/logo-blk.svg" />
+  </div>
+</div>
+  <nav class="disblo txtcen tappad posabs bo0 ri0 le0 caps">
+    <a href="" ng-click="changeView('mr_mrs')" class="wht fl padle padri">Mrmrs</a>
+    <a href="" ng-click="changeView('mrsjxn')" class="wht padle padri">Mrsjxn</a>
+    <a href="" ng-click="changeView('jxnblk')" class="wht fr padle padri">Jxnblk</a>
+  </nav>
+
+
+  <div ng-show="contentLoading" class="h2 h2-tab mdgry pad2 txtcen">Loading...</div>
   
-  <header ng-include src="'_header.html'" class="wht bg-cover bg-center asp-wide bg-speckles posrel"></header>
-  <article ng-include src="'_tracklist.html'" id="tracklist"></article>
-  <article ng-include src="'_footer.html'" id="site-footer"></article>
+  <div ng-hide="contentLoading" ng-repeat="track in tracks" id="{{track.permalink}}" class="bobo bo-ltgry media" ng-class="{wht: player.playing.id == track.id || player.paused.id == track.id}">
+    
+    <div class="img">
+      <a href="" class="play disb sq64 txtcen scale-hov" ng-class="{mdgry: player.paused.id != track.id, 'btn-link': player.paused.id == track.id}" ng-click="player.play(tracks, $index)" ng-hide="player.playing.id == track.id"><i class="icon icon-geo-play sq64-txt h2 disb"></i></a>
+      <a href="" class="pause disb sq64 txtcen btn-link" ng-click="player.pause(track)" ng-show="player.playing.id == track.id"><i class="icon icon-geo-pause sq64-txt h2 disb"></i></a>  <!-- ►  /  ❚ ❚ -->
+    </div>
+    
+    <div class="bd posrel minhi64" ng-switch="player.playing.id == track.id || player.paused.id == track.id">
+      <h2 class="h2 h2-tab sq64-txt marle marri2 posrel z3 truncate text-adjust-none">{{track.title}}</h2>
+      <div class="posabs fill bg-mdgry" ng-switch-when="true" ng-controller="ScrubberCtrl">      
+        <div class="posabs fill z5" ng-click="seekTo($event)"></div>
+        <div class="posabs to0 bo0 l0 bg-dkgry" style="width: {{currentBufferPercentage}}%"></div>
+        <div class="posabs to0 bo0 l0 bg-link" style="width: {{currentTimePercentage}}%"></div>
+        <p class="posabs to0 ri1 small anim-fast slide-left" ng-show="audio.readyState >= 3">{{currentTimeMS | playTime}} | {{durationMS | playTime}}</p>
+        <a ng-href="{{track.permalink_url}}" class="bo- z5 posabs ri1 tappad mdgry truncate xsmall" target="_blank"><span class="mob-hide">View on </span>SoundCloud »</a>
+      </div>
+    </div>
+    
+    <div class="bg-ltgry tappad padle padri" ng-show="player.playing.id == track.id || player.paused.id == track.id">
+    </div>
+    
+  </div>
+  
+  <div class="tappad tappad-mob padle padri bo-ltgry overhide txtcen" ng-hide="!hasPrevPage && !hasNextPage">
+  
+    <a class="fl tappad h2" ng-class="{mdgry: !hasPrevPage}" href="" ng-click="prevPage()">Previous</a>
+    
+    <span class="mdgry">Page: {{page}}</span>
+    
+    <a class="fr tappad h2" ng-class="{mdgry: !hasNextPage}" href="" ng-click="nextPage()">Next</a>
+  </div>
+  
+
+  <footer class="wi100 bg-link txtcen marto boto bo-dkltgry">
+    <div class="bg-wht pad marbo">
+      <p > 
+        <a href="http://mrmrs.cc" title="Adam Morse">MRMRS</a> 
+        <a href="http://jxnblk.com" title="Jackson Black">JXNBLK</a> 
+      </p>
+    </div>
+    <div class="social">
+      <p class="wht padbo-half">mrsjxn contact</p>
+      <a href="http://soundcloud.com/mrsjxn" class="disib touch-icon soundcloud sq48 no-flick">/mrsjxn</a>
+      <a href="http://twitter.com/mrsjxn_" class="disib touch-icon twitter sq48  no-flick">@mrsjxn_</a>
+    </div>
+    <p class="small txtcen padto wht"> Powered by SoundCloud</p> 
+  </footer>
+
+
 
 </div>
