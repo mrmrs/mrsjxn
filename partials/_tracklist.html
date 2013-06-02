@@ -15,11 +15,11 @@
         <div class="posabs to0 bo0 l0 bg-dkgry" style="width: {{currentBufferPercentage}}%"></div>
         <div class="posabs to0 bo0 l0 bg-link" style="width: {{currentTimePercentage}}%"></div>
         <p class="posabs to0 ri1 small anim-fast slide-left" ng-show="audio.readyState >= 3">{{currentTimeMS | playTime}} | {{durationMS | playTime}}</p>
+        <a ng-href="{{track.permalink_url}}" class="bo- z5 posabs ri1 tappad mdgry truncate xsmall" target="_blank"><span class="mob-hide">View on </span>SoundCloud »</a>
       </div>
     </div>
     
     <div class="bg-ltgry tappad padle padri" ng-show="player.playing.id == track.id || player.paused.id == track.id">
-      <a ng-href="{{track.permalink_url}}" class="disb tappad mdgry truncate" target="_blank">View on SoundCloud</a>
     </div>
     
   </div>

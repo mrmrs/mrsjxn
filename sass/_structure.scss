@@ -26,6 +26,7 @@
 .padto {  padding-top:    1rem; }
 .padri {  padding-right:  1rem; }
 .padbo {  padding-bottom: 1rem; }
+.padbo-half {  padding-bottom: .5rem; }
 .padle {  padding-left:   1rem; }
 
 .pad2 {   padding:        2rem; }
@@ -103,6 +104,12 @@
   left: 0;
   margin: auto;
 }
+
+.to- { top:    -12px; }
+.ri- { right:  -12px; }
+.bo- { bottom: -12px; }
+.le- { left:   -12px; }
+
 .to0 { top:    0; }
 .ri0 { right:  0; }
 .bo0 { bottom: 0; }
