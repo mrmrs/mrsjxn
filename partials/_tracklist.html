@@ -4,7 +4,7 @@
   <div ng-hide="contentLoading" ng-repeat="track in tracks" id="{{track.permalink}}" class="bobo bo-ltgry media" ng-class="{wht: player.playing.id == track.id || player.paused.id == track.id}">
     
     <div class="img">
-      <a href="" class="play disb sq64 txtcen" ng-class="{mdgry: player.paused.id != track.id, 'btn-link': player.paused.id == track.id}" ng-click="player.play(tracks, $index)" ng-hide="player.playing.id == track.id"><i class="icon icon-geo-play sq64-txt h2 disb"></i></a>
+      <a href="" class="play disb sq64 txtcen scale-hov" ng-class="{mdgry: player.paused.id != track.id, 'btn-link': player.paused.id == track.id}" ng-click="player.play(tracks, $index)" ng-hide="player.playing.id == track.id"><i class="icon icon-geo-play sq64-txt h2 disb"></i></a>
       <a href="" class="pause disb sq64 txtcen btn-link" ng-click="player.pause(track)" ng-show="player.playing.id == track.id"><i class="icon icon-geo-pause sq64-txt h2 disb"></i></a>  <!-- ►  /  ❚ ❚ -->
     </div>
     

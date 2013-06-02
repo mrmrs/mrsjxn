@@ -921,16 +921,8 @@ a:hover {
 .trans-slow2 {
   -webkit-transition-duration: 1s; }
 
-/*
-.logo .animate-right {
-  right:0!important;
-  -webkit-transition:right .9s;
-  transition:right .9s;
-}
-
-.logo .animate-left {
-  left:0!important;
-  -webkit-transition:left .9s;
-  transition:left .9s;
-}
-*/
+.scale-hov {
+  -webkit-transition: -webkit-transform ease-in .5s, color ease-in-out .3s; }
+  .scale-hov:hover {
+    -webkit-transform: scale(1.2);
+    -webkit-transition: -webkit-transform ease-in-out .3s, color ease-in-out .3s; }
