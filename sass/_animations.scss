@@ -53,6 +53,19 @@
   -webkit-animation-name: grow-in, fade-in;
 }
 
+
+.trans-all {
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease;
+}
+
+.trans-fast  { -webkit-transition-duration: .1s; }
+.trans-med   { -webkit-transition-duration: .2s; }
+.trans-slow  { -webkit-transition-duration: .5s; }
+.trans-slow2 { -webkit-transition-duration: 2s; }
+
+
+/*
 .logo .animate-right {
   right:0!important;
   -webkit-transition:right .9s;
@@ -64,3 +77,4 @@
   -webkit-transition:left .9s;
   transition:left .9s;
 }
+*/

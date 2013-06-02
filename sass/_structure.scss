@@ -123,6 +123,15 @@
 .bo5 { bottom: 5rem; }
 .le5 { left:   5rem; }
 
+.to40 { top: 40%; }
+
+
+.to50 { top: 50%; }
+.ri50 { right: 50%; }
+.bo50 { bottom: 50%; }
+.le50 { left: 50%; }
+
+
 .z1 { z-index: 100; }
 .z2 { z-index: 200; }
 .z3 { z-index: 300; }
@@ -164,10 +173,16 @@
 .minhi256 { min-height: 256px; }
 .minhi320 { min-height: 320px; }
 
+.minhi448 { min-height: 448px; }
+
+.hi-62percent { height: 62%; }
+
+
 .wi100 { width: 100%; }
 .wi90 {  width:  90%; }
 .wi75 {  width:  80%; }
-.wi50 {  width:  75%; }
+.wi50 {  width:  50%; }
+.wi30 {  width:  30%; }
 .wi25 {  width:  25%; }
 
 .maxwi100 { max-width: 100%; }
