@@ -691,53 +691,36 @@ a:hover {
 .bg-mrs-face {
   background: transparent url(/images/mrs.png) no-repeat center center; }
 
-.logo {
-  width: 50%;
-  float: left;
-  height: 60px;
-  margin-top: 100px;
-  outline: 1px solid gold;
-  max-height: 60px; }
-  .logo img {
-    max-height: 100%;
-    max-width: 100%; }
-
-.logo--right img {
-  right: -100%; }
-
-.logo--left img {
-  left: -100%; }
-
 .nav-link {
   padding: 20px;
   background: #eeeeee;
   text-transform: uppercase; }
 
+/* ==========================================================================
+   TOUCH ICONS
+   ========================================================================== */
 .twitter {
   background: url(/images/twitter.svg) no-repeat 0 0;
-  background-size: 48px 48px;
-  color: white !important;
-  line-height: 48px;
-  text-indent: -9999px;
-  position: relative;
-  left: 5px;
-  -webkit-transition: -webkit-transform .4s; }
+  left: 5px; }
   .twitter:hover {
-    -webkit-transition: -webkit-transform .4s;
     -webkit-transform: rotate(16deg); }
 
 .soundcloud {
   background: url(/images/soundcloud.svg) no-repeat 0 0;
-  background-size: 48px 48px;
-  color: white !important;
-  line-height: 48px;
-  position: relative;
-  left: -5px;
-  text-indent: -9999px;
-  -webkit-transition: -webkit-transform .4s; }
+  left: -5px; }
   .soundcloud:hover {
-    -webkit-transition: -webkit-transform .5s;
     -webkit-transform: rotate(-16deg); }
+
+.touch-icon {
+  text-indent: -9999px;
+  background-size: 48px 48px;
+  position: relative;
+  -webkit-transition: -webkit-transform ease-in-out .5s;
+  -webkit-backface-visibility: hidden;
+  line-height: 48px;
+  color: white !important; }
+  .touch-icon:hover {
+    -webkit-transition: -webkit-transform .4s; }
 
 /*
 
@@ -824,3 +807,7 @@ a:hover {
 
 .grow-fade-in {
   -webkit-animation-name: grow-in, fade-in; }
+
+/* Bug fix: Stops safari from flickering on hover */
+.no-flick {
+  -webkit-transform: translate3d(0, 0, 0); }

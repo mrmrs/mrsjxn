@@ -53,3 +53,5 @@
   -webkit-animation-name: grow-in, fade-in;
 }
 
+/* Bug fix: Stops safari from flickering on hover */
+.no-flick{-webkit-transform:translate3d(0,0,0);}
