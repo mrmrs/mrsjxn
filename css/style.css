@@ -46,6 +46,9 @@ small, .small {
   font-size: .875rem;
   -webkit-text-size-adjust: 100%; }
 
+.xsmall {
+  font-size: 12px; }
+
 strong, .bold {
   font-weight: 700; }
 
@@ -260,6 +263,18 @@ strong, .bold {
   bottom: 0;
   left: 0;
   margin: auto; }
+
+.to- {
+  top: -12px; }
+
+.ri- {
+  right: -12px; }
+
+.bo- {
+  bottom: -12px; }
+
+.le- {
+  left: -12px; }
 
 .to0 {
   top: 0; }
@@ -809,13 +824,3 @@ a:hover {
 
 .grow-fade-in {
   -webkit-animation-name: grow-in, fade-in; }
-
-.logo .animate-right {
-  right: 0 !important;
-  -webkit-transition: right .9s;
-  transition: right .9s; }
-
-.logo .animate-left {
-  left: 0 !important;
-  -webkit-transition: left .9s;
-  transition: left .9s; }
