@@ -258,3 +258,5 @@ a:hover {
 .bg-dim-white { background:rgba(255,255,255,0.2); }
 
 .no-hover:hover { color:#fff!important; }
+
+.no-tap-color { -webkit-tap-highlight-color:rgba(0,0,0,0); }

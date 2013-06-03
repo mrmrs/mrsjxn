@@ -71,12 +71,12 @@
       -webkit-transform:scale(1);
       -webkit-transition:-webkit-transform ease-in .5s, color ease-in-out .3s;
   &:hover {
-      -webkit-transform:scale(1.2);
+      -webkit-transform:scale(1.1);
       -webkit-transition:-webkit-transform ease-in-out .3s, color ease-in-out .3s;
   }
   &:active {
       opacity:.7;
-      -webkit-transform:scale(1.1);
+      -webkit-transform:scale(1);
       -webkit-transition:-webkit-transform ease-in-out .3s, opacity ease-in-out .1s;
   }
 }

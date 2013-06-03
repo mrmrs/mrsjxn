@@ -26,15 +26,20 @@
             <img class="title-blk wi100 bobox" src="images/logo-blk.svg">
       </div>
     </div>
-    <nav class="disblo txtcen tappad posabs bo0 ri0 le0 caps">
-      <a href="" ng-click="changeView('mr_mrs')" class="wht fl padle padri scale-hov" 
-         ng-class="{'bg-dim-white no-hover': view == 'mr_mrs', 'scale-hov': view != 'mr_mrs'}">Mrmrs</a>
-      <a href="" ng-click="changeView('mrsjxn')" class="wht padle padri disib" 
-         ng-class="{'bg-dim-white no-hover': view == 'mrsjxn','scale-hov': view != 'mrsjxn'}">Mrsjxn</a>
-      <a href="" ng-click="changeView('jxnblk')" class="wht fr padle padri" 
-         ng-class="{'bg-dim-white no-hover': view == 'jxnblk', 'scale-hov': view != 'jxnblk'}">Jxnblk</a>
-    </nav>
+    
+    <a href="" ng-click="viewLeft()" class="db posabs to0 ri50 bo0 le0 no-tap-color"></a>
+    <a href="" ng-click="viewRight()" class="db posabs to0 ri0 bo0 le50 no-tap-color"></a>
+    
   </header>
+  
+  <nav class="disblo txtcen tappad caps bg-mdgry2">
+    <a href="" ng-click="changeView(0)" class="fl padle padri" 
+       ng-class="{'dkgry': view == 'mr_mrs', 'wht scale-hov': view != 'mr_mrs'}">Mrmrs</a>
+    <a href="" ng-click="changeView(1)" class="padle padri disib" 
+       ng-class="{'dkgry': view == 'mrsjxn','wht scale-hov': view != 'mrsjxn'}">Mrsjxn</a>
+    <a href="" ng-click="changeView(2)" class="fr padle padri" 
+       ng-class="{'dkgry': view == 'jxnblk', 'wht scale-hov': view != 'jxnblk'}">Jxnblk</a> 
+  </nav>
 
 
   <div ng-show="contentLoading" class="h2 h2-tab mdgry pad2 txtcen">Loading...</div>
