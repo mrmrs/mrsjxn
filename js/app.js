@@ -124,7 +124,9 @@ mrsjxn.controller('MainCtrl', ['$scope', '$location', '$anchorScroll', 'soundclo
     $scope.audio = audio;
     $scope.player = player;
     $scope.tracks = [];
-    $scope.view = 'mrsjxn';
+    $scope.views = ['mr_mrs', 'mrsjxn', 'jxnblk'];
+    $scope.viewIndex = 1;
+    $scope.view = $scope.views[$scope.viewIndex];
     
     $scope.pageSize = 32;
     $scope.pageOffset = 0;
@@ -140,12 +142,27 @@ mrsjxn.controller('MainCtrl', ['$scope', '$location', '$anchorScroll', 'soundclo
     
     $scope.updateTracks();
     
-    $scope.changeView = function(view) {
+    $scope.changeView = function(i) {
       $scope.contentLoading = true;
       $scope.pageOffset = 0;
       $scope.page = 1;
-      $scope.view = view;
+      $scope.viewIndex = i;
+      $scope.view = $scope.views[$scope.viewIndex];
       $scope.updateTracks();
+    };
+    
+    $scope.viewLeft = function() {
+      if ($scope.viewIndex > 0) {
+        $scope.viewIndex--;
+        $scope.changeView($scope.viewIndex);
+      };
+    };
+    
+    $scope.viewRight = function() {
+      if ($scope.viewIndex < 2) {
+        $scope.viewIndex++;
+        $scope.changeView($scope.viewIndex);
+      };
     };
     
     $scope.nextPage = function(){

@@ -32,7 +32,6 @@ a:hover {
   color: darken($link, 10%);
 }
 
-
 .dkgry { color: $dkgry; }
 .mdgry { color: $mdgry; }
 .ltgry { color: $ltgry; }
@@ -41,6 +40,7 @@ a:hover {
 
 .bg-dkgry { background-color: $dkgry; }
 .bg-mdgry { background-color: $mdgry; }
+.bg-mdgry2 { background-color: #ccc; }
 .bg-ltgry { background-color: $ltgry; }
 .bg-wht   { background-color: #fff; }
 .bg-link  { background-color: $link; }
@@ -105,6 +105,7 @@ a:hover {
 
 .bg-speckles {background:transparent url(/images/background.jpg) no-repeat;}
 
+
 .bg-center  { background-position: center;}
 .bg-cover   { background-size: cover; }
 .bg-contain { background-size: contain; }
@@ -112,14 +113,14 @@ a:hover {
 
 .bg-jxn-face {
   background-color:transparent;
-  background-image: url(/images/Jxn.png);
+  background-image: url(/images/jxn.jpg);
   background-repeat: no-repeat;
   background-position: 50% center;
 }
 
 .bg-mrs-face {
   background-color:transparent;
-  background-image: url(/images/mrs.png);
+  background-image: url(/images/mrs.jpg);
   background-repeat: no-repeat;
   background-position: 50% center;
 }
@@ -257,3 +258,5 @@ a:hover {
 .bg-dim-white { background:rgba(255,255,255,0.2); }
 
 .no-hover:hover { color:#fff!important; }
+
+.no-tap-color { -webkit-tap-highlight-color:rgba(0,0,0,0); }
