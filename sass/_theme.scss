@@ -8,7 +8,7 @@
 $dkgry: #444;
 $mdgry: #999;
 $ltgry: #eee;
-$link:  #0cf;
+$link:  #bbb;
 
 // Add prime color
 
@@ -16,8 +16,8 @@ body {
   color: $dkgry;
   background-color: #fff;
   font-family: "freight-sans-pro", Helvetica, sans-serif;
-  //font-family: "skolar", Georgia, serif;
 }
+
 body,html {height:100%;}
 
 //.sans { font-family: "freight-sans-pro", Helvetica, sans-serif; }
@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-  color: darken($link, 10%);
+  color: darken($link, 20%);
 }
 
 .dkgry { color: $dkgry; }
@@ -160,10 +160,6 @@ a:hover {
   -webkit-filter: invert(100%);
   filter: invert(100%);
 }
-
-.title {}
-
-.title-pad { }
 
 .title-mr {
   padding-left: 31.579%;
