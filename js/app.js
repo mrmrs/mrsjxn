@@ -1,6 +1,6 @@
 'use strict';
 
-var mrsjxn = angular.module('mrsjxn', []).
+var mrsjxn = angular.module('mrsjxn', ['ngRoute']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'partials/main.html'});
     $routeProvider.when('/:view', {templateUrl: 'partials/main.html'});
@@ -8,147 +8,178 @@ var mrsjxn = angular.module('mrsjxn', []).
   }]);
 
 // Mrsjxn API account registered under Jxnblk's SoundCloud Account
-var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6';
+var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6',
+    iconUrl = '/assets/icons/plangular-icons.svg';
 
-mrsjxn.factory('soundcloud', function() {
-     
-    SC.initialize({
-      client_id: clientID,
-      redirect_uri: 'http:/mrsjxn.com'
+mrsjxn.factory('player', function ($document, $rootScope, $http) {
+  // Define the audio engine
+  var audio = $document[0].createElement('audio');
+
+  // Define the player object
+  var player = {
+    track: false,
+    playing: false,
+    paused: false,
+    tracks: null,
+    i: null,
+    play: function(tracks, i) {
+      if (i == null) {
+        tracks = new Array(tracks);
+        i = 0;
+      };
+      player.tracks = tracks;
+      player.track = tracks[i];
+      player.i = i;
+      if (player.paused != player.track) audio.src = player.track.stream_url + '?client_id=' + clientID;
+      audio.play();
+      player.playing = player.track;
+      player.paused = false;
+    },
+    pause: function() {
+      audio.pause();
+      if (player.playing) {
+        player.paused = player.playing;
+        player.playing = false;
+      };
+    },
+    // Functions for playlists (i.e. sets)
+    playPlaylist: function(playlist) {
+      if (player.tracks == playlist.tracks && player.paused) player.play(player.tracks, player.i);
+      else player.play(playlist.tracks, 0);
+    },
+    next: function(playlist) {
+      if (!playlist){
+        if (player.i+1 < player.tracks.length) {
+          player.i++;
+          player.play(player.tracks, player.i);
+        } else {
+          player.pause();
+        };
+      } else if (playlist && playlist.tracks == player.tracks) {
+        if (player.i + 1 < player.tracks.length) {
+          player.i++;
+          player.play(playlist.tracks, player.i);
+        } else {
+          player.pause();
+        };
+      };
+    },
+    previous: function(playlist) {
+      if (playlist.tracks == player.tracks && player.i > 0) {
+        player.i = player.i - 1;
+        player.play(playlist.tracks, player.i);
+      };
+    }
+  };
+
+  audio.addEventListener('ended', function() {
+    $rootScope.$apply(function(){
+      if (player.tracks.length > 0) player.next();
+      else player.pause();
     });
     
-    return {
-      clientID: clientID,
-      getTracks:
-        function($scope){                
-          SC.get($scope.scget, {limit: $scope.pageSize, offset: $scope.pageOffset}, function(data){
-            $scope.$apply(function () {
-              $scope.tracks = data;
-              $scope.contentLoading = false;
-              $scope.hasPrevPage = ($scope.pageOffset >= $scope.pageSize);
-              $scope.hasNextPage = ($scope.tracks.length >= $scope.pageSize);
-            });      
-          });
-        }       
-    };
-    
-  });
-  
-  
-mrsjxn.factory('player', function($rootScope, audio, soundcloud) {
-    var player,
-        tracks,
-        i,
-        //paused = false,
-        currentTimePercentage = audio.currentTime;
-        
-    player = {
+  }, false);
 
-      tracks: tracks,
-      i: i,
-      playing: false,
-      paused: false,
+  return player;
 
-      play: function(tracks, i) {
-        console.log('play: ' + tracks[i].title);
-        player.tracks = tracks;
-        if (player.paused != tracks[i]) {
-          audio.src = tracks[i].stream_url + '?client_id=' + clientID;
+  // Returns the player, audio, track, and other objects
+  /*
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function (scope, elem, attrs) {
+      scope.player = player;
+      scope.audio = audio;
+      scope.currentTime = 0;
+      scope.duration = 0;
+
+      // Updates the currentTime and duration for the audio
+      audio.addEventListener('timeupdate', function() {
+        if (scope.track == player.track || (scope.playlist && scope.playlist.tracks == player.tracks)){
+          scope.$apply(function() {
+            scope.currentTime = (audio.currentTime * 1000).toFixed();
+            scope.duration = (audio.duration * 1000).toFixed();
+          });  
         };
-        audio.play();
-        player.playing = tracks[i];
-        player.i = i;
-        player.paused = false;
-      },
+      }, false);
 
-      pause: function(track) {
-        console.log('pause: ' + track.title);
-        if (player.playing) {
-          audio.pause();
-          player.playing = false;
-          player.paused = track;
-        }
-      },
-      
-      stop: function(track) {
-        audio.pause();
-        player.playing = false;
-        player.paused = false;
-      },
-      
-      next: function() {
-        player.i = player.i+1;
-        if (player.tracks.length > (player.i + 1)) player.play(player.tracks, player.i);   
-      }
-      
-    };
-    
-    audio.addEventListener('ended', function() {
-      $rootScope.$apply(player.next());
-    }, false);
+      // Handle click events for seeking
+      scope.seekTo = function($event){
+        var xpos = $event.offsetX / $event.target.offsetWidth;
+        audio.currentTime = (xpos * audio.duration);
+      };
+    }
+  }
+  */
+});
 
-    return player;
-  });
-   
-mrsjxn.factory('audio', function($document, $rootScope) {
-    var audio = $document[0].createElement('audio');  
-    return audio;
-  });
-  
-// Filter to display hours, minutes and seconds  
+// Plangular Icons
+mrsjxn.directive('icon', function() {
+  var xmlHttp = null,
+      sprite;
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.open('GET', iconUrl, false);
+  xmlHttp.send(null);
+  if(xmlHttp.responseXML) sprite = xmlHttp.responseXML.documentElement;
+  else console.error('Icon sprite not found - check iconUrl variable in plangular.js');
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function (scope, elem, attrs) {
+      if (!sprite) return false;
+      var el = elem[0],
+          id = attrs.icon,
+          svg = sprite.getElementById(id).cloneNode(true);
+      el.className += ' icon icon-' + id;
+      svg.removeAttribute('id');
+      svg.setAttribute('class', el.className);
+      el.parentNode.replaceChild(svg, el);
+    }
+  }
+});
+
+// Filter to convert milliseconds to hours, minutes, seconds
 mrsjxn.filter('playTime', function() {
-    return function(ms) {
-      var hours = Math.floor(ms / 36e5),
-          mins = '0' + Math.floor((ms % 36e5) / 6e4),
-          secs = '0' + Math.floor((ms % 6e4) / 1000);
-            mins = mins.substr(mins.length - 2);
-            secs = secs.substr(secs.length - 2);
+  return function(ms) {
+    var hours = Math.floor(ms / 36e5),
+        mins = '0' + Math.floor((ms % 36e5) / 6e4),
+        secs = '0' + Math.floor((ms % 6e4) / 1000);
+        mins = mins.substr(mins.length - 2);
+        secs = secs.substr(secs.length - 2);
+    if(!isNaN(secs)){
       if (hours){
         return hours+':'+mins+':'+secs;  
       } else {
         return mins+':'+secs;  
-      }; 
+      };
+    } else {
+      return '00:00';
     };
-  });
+  };
+});
 
-////////////////////////////////////////////////////////////////
-// Controllers
 
 // Main Controller
-mrsjxn.controller('MainCtrl', ['$scope', '$location', '$anchorScroll', 'soundcloud', 'player', 'audio', function($scope, $location, $anchorScroll, soundcloud, player, audio) {
+mrsjxn.controller('MainCtrl', ['$scope', '$location', '$http', 'player', function($scope, $location, $http, player) {
     
     $scope.contentLoading = true;
-    
-    // To do: Try empty state tracks json object for loading states.
-    
-    $scope.audio = audio;
-    $scope.player = player;
     $scope.tracks = [];
     $scope.views = ['mr_mrs', 'mrsjxn', 'jxnblk'];
     $scope.viewIndex = 1;
     $scope.view = $scope.views[$scope.viewIndex];
+
+    $scope.player = player;
     
-    $scope.pageSize = 32;
-    $scope.pageOffset = 0;
-    $scope.page = 1;
-    $scope.updatePage = function(){
-      $scope.page = ($scope.pageOffset + $scope.pageSize) / $scope.pageSize;
-    };
+
+    $http.get('/tracks.json').success(function(data){
+      $scope.tracks = data;
+    });
     
-    $scope.updateTracks = function(){
-      $scope.scget = '/users/' + $scope.view + '/tracks';   
-      soundcloud.getTracks($scope);  
-    };
-    
-    $scope.updateTracks();
     
     $scope.changeView = function(i) {
       $scope.contentLoading = true;
-      $scope.pageOffset = 0;
-      $scope.page = 1;
       $scope.viewIndex = i;
       $scope.view = $scope.views[$scope.viewIndex];
-      $scope.updateTracks();
     };
     
     $scope.viewLeft = function() {
@@ -164,48 +195,7 @@ mrsjxn.controller('MainCtrl', ['$scope', '$location', '$anchorScroll', 'soundclo
         $scope.changeView($scope.viewIndex);
       };
     };
-    
-    $scope.nextPage = function(){
-      if($scope.hasNextPage){
-        $scope.contentLoading = true;
-        $scope.pageOffset = $scope.pageOffset + $scope.pageSize;
-        $scope.updatePage();
-        soundcloud.getTracks($scope);
-        $location.hash();
-        $anchorScroll(); 
-      };
-    };
-    
-    $scope.prevPage = function(){
-      if($scope.hasPrevPage) {
-        $scope.contentLoading = true;
-        $scope.pageOffset = $scope.pageOffset - $scope.pageSize;
-        $scope.updatePage();
-        soundcloud.getTracks($scope);
-        $location.hash();
-        $anchorScroll();  
-      };      
-    };
       
   }]);
 
-// Player Scrubber Control  
-mrsjxn.controller('ScrubberCtrl', ['$scope', 'audio', function($scope, audio){
-      
-      function updateScrubber() {
-        $scope.$apply(function() {
-          $scope.currentBufferPercentage = ((audio.buffered.length && audio.buffered.end(0)) / audio.duration) * 100;
-          $scope.currentTimePercentage = (audio.currentTime / audio.duration) * 100;
-          $scope.currentTimeMS = (audio.currentTime * 1000).toFixed();
-          $scope.durationMS = (audio.duration * 1000).toFixed();
-        });
-      };
-      
-      audio.addEventListener('timeupdate', updateScrubber, false);
-    
-      $scope.seekTo = function($event){
-        var xpos = $event.offsetX / $event.target.offsetWidth;
-        audio.currentTime = (xpos * audio.duration);
-      };
-  }]);
   
