@@ -8,9 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/css/style.css">
 </head>
-<body>  
+<body ng-controller="MainCtrl">
+
+  <header class="center px2 py4">
+    <h1 class="h0 caps">MrsJxn</h1>
+    <h1>Jxnblk</h1>
+    <p>Post-Future Beats</p>
+  </header>
 
   <div ng-view></div>
+
+  <footer class="center px2 py4">
+    <p class="h4">&copy; 2048 MrsJxn</p>
+  </footer>
   
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>

@@ -1,0 +1,79 @@
+// MrsJxn.com
+
+// Variables
+
+$space: .5rem;
+$dark: #222;
+
+
+// Base
+
+body {
+  font-family: 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: $dark;
+}
+
+a {
+  color: white;
+}
+
+
+// Type
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $space;
+}
+
+.h0 { font-size: 6rem; }
+h1, .h1 { font-size: 3rem; }
+h2, .h2 { font-size: 1.5rem; }
+h3, h4, h5, p, .h3 { font-size: 1.25rem; }
+h6, small, .h4 { font-size: 1rem; }
+
+.caps {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.center { text-align: center; }
+
+
+// Padding
+.p1 { padding: $space; }
+.py1 { padding-top: $space; padding-bottom: $space; }
+.px1 { padding-left: $space; padding-right: $space; }
+.p2 { padding: 2*$space; }
+.py2 { padding-top: 2*$space; padding-bottom: 2*$space; }
+.px2 { padding-left: 2*$space; padding-right: 2*$space; }
+.p3 { padding: 3*$space; }
+.py3 { padding-top: 3*$space; padding-bottom: 3*$space; }
+.px3 { padding-left: 3*$space; padding-right: 3*$space; }
+.p4 { padding: 4*$space; }
+.py4 { padding-top: 4*$space; padding-bottom: 4*$space; }
+.px4 { padding-left: 4*$space; padding-right: 4*$space; }
+
+
+// Margin
+.m1 { margin: $space; }
+.mt1 { margin-top: $space; }
+.mr1 { margin-right: $space; }
+.mb1 { margin-bottom: $space; }
+.ml1 { margin-left: $space; }
+.m2 { margin: 2*$space; }
+.mt2 { margin-top: 2*$space; }
+.mr2 { margin-right: 2*$space; }
+.mb2 { margin-bottom: 2*$space; }
+.ml2 { margin-left: 2*$space; }
+

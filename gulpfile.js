@@ -35,6 +35,7 @@ gulp.task('add', function() {
         delete body.user_id;
         var data = JSON.parse(body);
         delete data.duration; delete data.commentable;
+        delete data.created_with;
         delete data.state; delete data.original_content_size; delete data.sharing;
         delete data.tag_list; delete data.streamable; delete data.embeddable_by;
         delete data.downloadable; delete data.purchase_url; delete data.label_id;
@@ -46,7 +47,7 @@ gulp.task('add', function() {
         delete data.download_count; delete data.favoritings_count; delete data.comment_count;
         return gulp.src('tracks.json')
           .pipe(jsonEditor(function(json) {
-            json.unshift(data);
+            json[artist].unshift(data);
             return json;
           }))
           .pipe(gulp.dest('.'));

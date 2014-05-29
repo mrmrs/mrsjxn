@@ -114,14 +114,15 @@ mrsjxn.factory('player', function ($document, $rootScope, $http) {
 });
 
 // Plangular Icons
+/*
 mrsjxn.directive('icon', function() {
   var xmlHttp = null,
-      sprite;
-  xmlHttp = new XMLHttpRequest();
-  xmlHttp.open('GET', iconUrl, false);
-  xmlHttp.send(null);
-  if(xmlHttp.responseXML) sprite = xmlHttp.responseXML.documentElement;
-  else console.error('Icon sprite not found - check iconUrl variable in plangular.js');
+      sprite = {
+        play: '',
+        pause: '',
+        previous: '',
+        next: ''
+      };
   return {
     restrict: 'A',
     scope: true,
@@ -129,7 +130,10 @@ mrsjxn.directive('icon', function() {
       if (!sprite) return false;
       var el = elem[0],
           id = attrs.icon,
-          svg = sprite.getElementById(id).cloneNode(true);
+          //svg = sprite.getElementById(id).cloneNode(true);
+          svg = document.createElement(svg);
+          //svg;
+      //svg.createElement(path);
       el.className += ' icon icon-' + id;
       svg.removeAttribute('id');
       svg.setAttribute('class', el.className);
@@ -137,6 +141,7 @@ mrsjxn.directive('icon', function() {
     }
   }
 });
+*/
 
 // Filter to convert milliseconds to hours, minutes, seconds
 mrsjxn.filter('playTime', function() {
@@ -172,7 +177,8 @@ mrsjxn.controller('MainCtrl', ['$scope', '$location', '$http', 'player', functio
     
 
     $http.get('/tracks.json').success(function(data){
-      $scope.tracks = data;
+      console.log(data);
+      //$scope.tracks = data.mrsjxn;
     });
     
     
