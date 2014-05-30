@@ -1,24 +1,27 @@
-<nav class="h4 bold caps center clip px2 py1">
-  <a href ng-click="setView('mr_mrs')" class="left tappable px1" ng-class="{'active-dot': view == 'mr_mrs'}" >MrMrs</a>
-  <a href ng-click="setView('jxnblk')" class="right tappable px1" ng-class="{'active-dot': view == 'jxnblk'}" >Jxnblk</a>
-  <a href ng-click="setView('mrsjxn')" class="inline-block tappable px1" ng-class="{'active-dot': view == 'mrsjxn'}" >MrsJxn</a>
-</nav>
-<div class="py2">
-  <div ng-include="'partials/header.html'"></div>
-  <div class="center container p2" ng-include="'partials/player.html'"></div>
+<div class="bg-fixed" ng-show="player.playing.background" style="background-image:url({{player.playing.background}});"></div>
+<div class="relative">
+  <nav class="h4 bold caps center clip px2 py1">
+    <a href ng-click="setView('mr_mrs')" class="left tappable px1" ng-class="{'active-dot': view == 'mr_mrs'}" >MrMrs</a>
+    <a href ng-click="setView('jxnblk')" class="right tappable px1" ng-class="{'active-dot': view == 'jxnblk'}" >Jxnblk</a>
+    <a href ng-click="setView('mrsjxn')" class="inline-block tappable px1" ng-class="{'active-dot': view == 'mrsjxn'}" >MrsJxn</a>
+  </nav>
+  <div class="py2">
+    <div ng-include="'partials/header.html'"></div>
+    <div class="center container p2" ng-include="'partials/player.html'"></div>
+    <!--
+    <p class="h4 caps tappable container px2 border-bottom">{{ tracks[0].user.username }}</p>
+    -->
+    <ul class="list-simple">
+      <li ng-repeat="track in tracks">
+        <a href
+          class="h3 bold butt-tap container clip"
+          ng-class="{'butt-active': track.id == ( player.playing.id || player.paused.id ) }"
+          ng-click="player.playPause(tracks, $index)">
+            <span class="h4 regular right">{{ track.duration | playTime }}</span>
+            {{ track.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div ng-include="'partials/footer.html'"></div>
 </div>
-<div class="py2">
-  <p class="h4 caps tappable container px2 border-bottom">{{ tracks[0].user.username }}</p>
-  <ul class="list-simple">
-    <li ng-repeat="track in tracks">
-      <a href
-        class="h3 bold butt-tap container clip"
-        ng-class="{'butt-active': track.id == ( player.playing.id || player.paused.id ) }"
-        ng-click="player.playPause(tracks, $index)">
-          <span class="h4 regular right">{{ track.duration | playTime }}</span>
-          {{ track.title }}
-      </a>
-    </li>
-  </ul>
-</div>
-<div ng-include="'partials/footer.html'"></div>

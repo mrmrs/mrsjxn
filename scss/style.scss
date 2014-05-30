@@ -402,3 +402,28 @@ $logotype-padding: 100% - percentage(31/37);
 }
 */
 
+.bg-fixed {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 1;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  &.ng-hide {
+    opacity: 0;
+    display: block !important;
+  }
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    display: block !important;
+  }
+}
+@-webkit-keyframes fadeout {
+  from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes fadeout {
+  from { opacity: 1; }
+    to { opacity: 0; }
+}
