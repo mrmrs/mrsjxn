@@ -382,13 +382,23 @@ $logotype-padding: 100% - percentage(31/37);
   from { opacity: 0; }
     to { opacity: 1; }
 }
+/*
 .bg-tachyons {
   background-image: url(../assets/tachyons.svg);
-  background-size: 304px 304px;
+  background-size: 512px 512px;
   background-repeat: no-repeat;
-  transition: background .6s ease;
+  -webkit-transition: background-position .6s ease;
+  transition: background-position .5s ease;
+  background-position: 50% 48px; 
 }
-.mr_mrs .bg-tachyons { background-position: 55% top; }
-.mrsjxn .bg-tachyons { background-position: 50% top; }
-.jxnblk .bg-tachyons { background-position: 45% top; }
+.mr_mrs {
+  background-position: 0% 48px;
+}
+.mrsjxn {
+  background-position: 50% 48px;
+}
+.jxnblk {
+  background-position: 100% 48px;
+}
+*/
 
