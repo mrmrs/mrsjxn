@@ -12,4 +12,6 @@
 </a>
 <h1 class="h2 caps mb2">{{ player.tracks[player.i].title }}</h1>
 <div class="progress">
+  <div class="progress-value" style="width: {{currentTimePercentage}}%"></div>
+  <div class="progress-overlay" ng-click="seekTo($event)"></div>
 </div>

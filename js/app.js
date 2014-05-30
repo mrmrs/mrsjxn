@@ -15,6 +15,7 @@ app.factory('player', function ($document, $rootScope, $http) {
 
   // Define the player object
   var player = {
+    audio: audio,
     track: false,
     playing: false,
     paused: false,
@@ -179,6 +180,23 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     if(!player.playing && !player.paused) player.load($scope.tracks);
   };
   
+  $scope.currentTimeMS = 0;
+  $scope.durationMS = 0;
+  function updateView() {
+    console.log('timeupdate');
+    $scope.$apply(function() {
+      $scope.currentBufferPercentage = ((player.audio.buffered.length && player.audio.buffered.end(0)) / player.audio.duration) * 100;
+      $scope.currentTimePercentage = (player.audio.currentTime / player.audio.duration) * 100;
+      $scope.currentTimeMS = (player.audio.currentTime * 1000).toFixed();
+      $scope.durationMS = (player.audio.duration * 1000).toFixed();
+    });
+  };  
+  player.audio.addEventListener('timeupdate', updateView, false);
+  $scope.seekTo = function($event){
+    var xpos = $event.offsetX / $event.target.offsetWidth;
+    player.audio.currentTime = (xpos * player.audio.duration);
+  };
+
 }]);
 
 
