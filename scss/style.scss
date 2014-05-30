@@ -22,7 +22,10 @@ a {
   color: white;
   text-decoration: none;
 }
-svg { fill: white; }
+svg {
+  max-height: 100%;
+  fill: white;
+}
 
 
 // Type
@@ -249,7 +252,7 @@ $logotype-padding: 100% - percentage(31/37);
   position: absolute;
   transition: all .4s ease;
   width: 30%;
-  img {
+  svg, img {
     box-sizing: border-box;
     width: 100%;
     height: auto;
