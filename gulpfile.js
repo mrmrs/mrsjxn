@@ -34,8 +34,7 @@ gulp.task('add', function() {
       if (!error && response.statusCode == 200) {
         delete body.user_id;
         var data = JSON.parse(body);
-        delete data.duration; delete data.commentable;
-        delete data.created_with;
+        delete data.commentable; delete data.created_with;
         delete data.state; delete data.original_content_size; delete data.sharing;
         delete data.tag_list; delete data.streamable; delete data.embeddable_by;
         delete data.downloadable; delete data.purchase_url; delete data.label_id;

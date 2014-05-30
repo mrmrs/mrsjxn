@@ -1,17 +1,33 @@
 <a href
+  class="butt-icon mr1 fadein"
+  ng-show="player.playing || player.paused"
+  ng-click="player.previous()">
+    <div icon="previous"></div>
+</a>
+<a href
   class="h2 butt-circle mb2"
   ng-hide="player.playing"
   ng-click="player.play(player.tracks, player.i)">
-  <div icon="play" class="nudge-left"></div>
+    <div icon="play" class="nudge-left"></div>
 </a>
 <a href
   class="h2 butt-circle mb2"
   ng-show="player.playing"
   ng-click="player.pause()">
-  <div icon="pause"></div>
+    <div icon="pause"></div>
+</a>
+<a href
+  class="butt-icon ml1 fadein"
+  ng-show="player.playing || player.paused"
+  ng-click="player.next()">
+    <div icon="next"></div>
 </a>
 <h1 class="h2 caps mb2">{{ player.tracks[player.i].title }}</h1>
-<div class="progress">
+<div class="progress mb1">
   <div class="progress-value" style="width: {{currentTimePercentage}}%"></div>
   <div class="progress-overlay" ng-click="seekTo($event)"></div>
+</div>
+<div class="h4 clip">
+  <div class="left">{{ currentTimeMS | playTime }}</div>
+  <div class="right">{{ durationMS | playTime }}</div>
 </div>

@@ -54,7 +54,7 @@ app.factory('player', function ($document, $rootScope, $http) {
     next: function() {
       if (player.i+1 < player.tracks.length) {
         player.i++;
-        player.play(player.tracks[player.i], player.i);
+        player.play(player.tracks, player.i);
       } else {
         player.pause();
       };
@@ -62,7 +62,7 @@ app.factory('player', function ($document, $rootScope, $http) {
     previous: function() {
       if (player.i > 0) {
         player.i = player.i - 1;
-        player.play(player.tracks[player.i], player.i);
+        player.play(player.tracks, player.i);
       };
     }
   };
@@ -174,16 +174,14 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
   });
 
   $scope.setView = function(view) {
-    console.log('clicked ' + view);
     $scope.view = view;
     $scope.tracks = $scope.data[view];
-    if(!player.playing && !player.paused) player.load($scope.tracks);
+    if(!player.playing) player.load($scope.tracks);
   };
   
   $scope.currentTimeMS = 0;
   $scope.durationMS = 0;
   function updateView() {
-    console.log('timeupdate');
     $scope.$apply(function() {
       $scope.currentBufferPercentage = ((player.audio.buffered.length && player.audio.buffered.end(0)) / player.audio.duration) * 100;
       $scope.currentTimePercentage = (player.audio.currentTime / player.audio.duration) * 100;

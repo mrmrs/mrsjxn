@@ -7,15 +7,18 @@
   <div ng-include="'partials/header.html'"></div>
   <div class="center container p2" ng-include="'partials/player.html'"></div>
 </div>
-<div class="center py4">
-  <p class="h4 caps container px2">{{ tracks[0].user.username }}</p>
-  <div ng-repeat="track in tracks">
-    <a href
-      class="h3 bold butt-tap container"
-      ng-class="{'butt-active': track.id == ( player.playing.id || player.paused.id ) }"
-      ng-click="player.playPause(tracks, $index)">
-        {{ track.title }}
-    </a>
-  </div>
+<div class="py2">
+  <p class="h4 caps tappable container px2 border-bottom">{{ tracks[0].user.username }}</p>
+  <ul class="list-simple">
+    <li ng-repeat="track in tracks">
+      <a href
+        class="h3 bold butt-tap container clip"
+        ng-class="{'butt-active': track.id == ( player.playing.id || player.paused.id ) }"
+        ng-click="player.playPause(tracks, $index)">
+          <span class="h4 regular right">{{ track.duration | playTime }}</span>
+          {{ track.title }}
+      </a>
+    </li>
+  </ul>
 </div>
-
+<div ng-include="'partials/footer.html'"></div>
