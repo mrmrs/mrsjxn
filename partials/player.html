@@ -1,0 +1,12 @@
+<h2>{{ player.tracks[player.i].user.username }}</h2>
+<h1>{{ player.tracks[player.i].title }}</h1>
+<a href
+  ng-hide="player.playing"
+  ng-click="player.play(player.tracks, player.i)">
+  <div icon="play"></div>
+</a>
+<a href
+  ng-show="player.playing"
+  ng-click="player.pause()">
+  <div icon="pause"></div>
+</a>

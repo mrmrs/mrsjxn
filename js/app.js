@@ -1,17 +1,15 @@
 'use strict';
 
-var mrsjxn = angular.module('mrsjxn', ['ngRoute']).
+var app = angular.module('app', ['ngRoute']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'partials/main.html'});
-    $routeProvider.when('/:view', {templateUrl: 'partials/main.html'});
     $routeProvider.otherwise({ redirectTo: '/' });
   }]);
 
 // Mrsjxn API account registered under Jxnblk's SoundCloud Account
-var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6',
-    iconUrl = '/assets/icons/plangular-icons.svg';
+var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6';
 
-mrsjxn.factory('player', function ($document, $rootScope, $http) {
+app.factory('player', function ($document, $rootScope, $http) {
   // Define the audio engine
   var audio = $document[0].createElement('audio');
 
@@ -22,17 +20,20 @@ mrsjxn.factory('player', function ($document, $rootScope, $http) {
     paused: false,
     tracks: null,
     i: null,
+    load: function(tracks) {
+      player.tracks = tracks;
+      player.i = 0;
+    },
     play: function(tracks, i) {
       if (i == null) {
         tracks = new Array(tracks);
         i = 0;
       };
-      player.tracks = tracks;
-      player.track = tracks[i];
       player.i = i;
-      if (player.paused != player.track) audio.src = player.track.stream_url + '?client_id=' + clientID;
+      player.tracks = tracks;
+      if (player.paused != player.tracks[player.i]) audio.src = player.tracks[player.i].stream_url + '?client_id=' + clientID;
       audio.play();
-      player.playing = player.track;
+      player.playing = player.tracks[player.i];
       player.paused = false;
     },
     pause: function() {
@@ -42,32 +43,25 @@ mrsjxn.factory('player', function ($document, $rootScope, $http) {
         player.playing = false;
       };
     },
-    // Functions for playlists (i.e. sets)
-    playPlaylist: function(playlist) {
-      if (player.tracks == playlist.tracks && player.paused) player.play(player.tracks, player.i);
-      else player.play(playlist.tracks, 0);
+    playPause: function(tracks, i){
+      if (tracks[i].id == player.playing.id) {
+        player.pause();
+      } else {
+        player.play(tracks, i);
+      }
     },
-    next: function(playlist) {
-      if (!playlist){
-        if (player.i+1 < player.tracks.length) {
-          player.i++;
-          player.play(player.tracks, player.i);
-        } else {
-          player.pause();
-        };
-      } else if (playlist && playlist.tracks == player.tracks) {
-        if (player.i + 1 < player.tracks.length) {
-          player.i++;
-          player.play(playlist.tracks, player.i);
-        } else {
-          player.pause();
-        };
+    next: function() {
+      if (player.i+1 < player.tracks.length) {
+        player.i++;
+        player.play(player.tracks[player.i], player.i);
+      } else {
+        player.pause();
       };
     },
-    previous: function(playlist) {
-      if (playlist.tracks == player.tracks && player.i > 0) {
+    previous: function() {
+      if (player.i > 0) {
         player.i = player.i - 1;
-        player.play(playlist.tracks, player.i);
+        player.play(player.tracks[player.i], player.i);
       };
     }
   };
@@ -114,37 +108,36 @@ mrsjxn.factory('player', function ($document, $rootScope, $http) {
 });
 
 // Plangular Icons
-/*
-mrsjxn.directive('icon', function() {
-  var xmlHttp = null,
-      sprite = {
-        play: '',
-        pause: '',
-        previous: '',
-        next: ''
+
+app.directive('icon', function() {
+  var sprite = {
+        play: 'M0 0 L32 16 L0 32 z',
+        pause: 'M0 0 H12 V32 H0 z M20 0 H32 V32 H20 z',
+        previous: 'M0 0 H4 V14 L32 0 V32 L4 18 V32 H0 z',
+        next: 'M0 0 L28 14 V0 H32 V32 H28 V18 L0 32 z'
       };
   return {
     restrict: 'A',
     scope: true,
     link: function (scope, elem, attrs) {
-      if (!sprite) return false;
       var el = elem[0],
           id = attrs.icon,
-          //svg = sprite.getElementById(id).cloneNode(true);
-          svg = document.createElement(svg);
-          //svg;
-      //svg.createElement(path);
+          svg = document.createElementNS('http://www.w3.org/2000/svg','svg'),
+          path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      svg.setAttribute('viewBox', '0 0 32 32');
+      path.setAttribute('d', sprite[id]);
+      svg.appendChild(path);
       el.className += ' icon icon-' + id;
-      svg.removeAttribute('id');
       svg.setAttribute('class', el.className);
       el.parentNode.replaceChild(svg, el);
     }
   }
 });
-*/
+
 
 // Filter to convert milliseconds to hours, minutes, seconds
-mrsjxn.filter('playTime', function() {
+app.filter('playTime', function() {
   return function(ms) {
     var hours = Math.floor(ms / 36e5),
         mins = '0' + Math.floor((ms % 36e5) / 6e4),
@@ -165,43 +158,29 @@ mrsjxn.filter('playTime', function() {
 
 
 // Main Controller
-mrsjxn.controller('MainCtrl', ['$scope', '$location', '$http', 'player', function($scope, $location, $http, player) {
-    
-    $scope.contentLoading = true;
-    $scope.tracks = [];
-    $scope.views = ['mr_mrs', 'mrsjxn', 'jxnblk'];
-    $scope.viewIndex = 1;
-    $scope.view = $scope.views[$scope.viewIndex];
+app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($scope, $http, $location, player) {
+  $scope.isLoading = true;
+  $scope.tracks = [];
+  $scope.data;
+  $scope.view = 'mrsjxn';
+  //$scope.views = ['mr_mrs', 'mrsjxn', 'jxnblk'];
+  //$scope.viewIndex = 1;
+  //$scope.view = $scope.views[$scope.viewIndex];
+  $scope.player = player;
 
-    $scope.player = player;
-    
+  $http.get('/tracks.json').success(function(data){
+    $scope.data = data;
+    $scope.isLoading = false;
+    $scope.tracks = $scope.data[$scope.view];
+  });
 
-    $http.get('/tracks.json').success(function(data){
-      console.log(data);
-      //$scope.tracks = data.mrsjxn;
-    });
-    
-    
-    $scope.changeView = function(i) {
-      $scope.contentLoading = true;
-      $scope.viewIndex = i;
-      $scope.view = $scope.views[$scope.viewIndex];
-    };
-    
-    $scope.viewLeft = function() {
-      if ($scope.viewIndex > 0) {
-        $scope.viewIndex--;
-        $scope.changeView($scope.viewIndex);
-      };
-    };
-    
-    $scope.viewRight = function() {
-      if ($scope.viewIndex < 2) {
-        $scope.viewIndex++;
-        $scope.changeView($scope.viewIndex);
-      };
-    };
-      
-  }]);
-
+  $scope.setView = function(view) {
+    console.log('clicked ' + view);
+    $scope.view = view;
+    $scope.tracks = $scope.data[view];
+    if(!player.playing && !player.paused) player.load($scope.tracks);
+  };
   
+}]);
+
+

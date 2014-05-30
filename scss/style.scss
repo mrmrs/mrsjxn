@@ -3,7 +3,7 @@
 // Variables
 
 $space: .5rem;
-$dark: #222;
+$dark: #111;
 
 
 // Base
@@ -21,6 +21,7 @@ body {
 a {
   color: white;
 }
+svg { fill: white; }
 
 
 // Type
@@ -57,12 +58,12 @@ h6, small, .h4 { font-size: 1rem; }
 .p2 { padding: 2*$space; }
 .py2 { padding-top: 2*$space; padding-bottom: 2*$space; }
 .px2 { padding-left: 2*$space; padding-right: 2*$space; }
-.p3 { padding: 3*$space; }
-.py3 { padding-top: 3*$space; padding-bottom: 3*$space; }
-.px3 { padding-left: 3*$space; padding-right: 3*$space; }
-.p4 { padding: 4*$space; }
-.py4 { padding-top: 4*$space; padding-bottom: 4*$space; }
-.px4 { padding-left: 4*$space; padding-right: 4*$space; }
+.p3 { padding: 4*$space; }
+.py3 { padding-top: 4*$space; padding-bottom: 4*$space; }
+.px3 { padding-left: 4*$space; padding-right: 4*$space; }
+.p4 { padding: 8*$space; }
+.py4 { padding-top: 8*$space; padding-bottom: 8*$space; }
+.px4 { padding-left: 8*$space; padding-right: 8*$space; }
 
 
 // Margin
@@ -77,3 +78,94 @@ h6, small, .h4 { font-size: 1rem; }
 .mb2 { margin-bottom: 2*$space; }
 .ml2 { margin-left: 2*$space; }
 
+
+// Layout
+.container {
+  max-width: 40rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+// Icons
+.icon {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  fill: #fff;
+}
+
+
+// Buttons
+.butt {
+  display: inline-block;
+  line-height: 2.5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 2px white;
+  border-radius: .25rem;
+  &:hover {
+    color: $dark;
+    background-color: white;
+  }
+}
+.butt-active {
+  color: $dark;
+  background-color: white;
+}
+
+// Avatars
+.avatars {
+  position: relative;
+  height: 128px;
+}
+.avatar {
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  transition: all .2s ease;
+  svg {
+    width: 128px;
+    height: 128px;
+    transition: all .2s ease;
+  }
+}
+.mrsjxn {
+  .avatar--skullcat {
+    width: 64px;
+    margin-left: -68px;
+  }
+  .avatar--jxnblk {
+    width: 64px;
+    margin-left: 4px;
+    svg {
+      margin-left: -64px;
+    }
+  }
+  .avatar--jxnblk-eyes {
+    opacity: 0;
+  }
+}
+.jxnblk {
+  .avatar--skullcat {
+    left: -128px;
+  }
+  .avatar--jxnblk {
+    margin-left: -64px;
+  }
+  .avatar--jxnblk-eyes {
+    margin-left: -64px;
+  }
+}
+.mr_mrs {
+  .avatar--skullcat {
+    margin-left: -64px;
+  }
+  .avatar--jxnblk {
+    left: 100%;
+  }
+  .avatar--jxnblk-eyes {
+    opacity: 0;
+  }
+}

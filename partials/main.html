@@ -1,6 +1,9 @@
-<div class="px2 py4">
+<div ng-include="'partials/header.html'"></div>
+<div class="container px2 py4">
+  <div ng-include="'partials/player.html'"></div>
   <div ng-repeat="track in tracks">
-    <a href ng-click="player.play(track)">play</a> | <a href ng-click="player.pause()">pause</a>
-    {{ track.title }}
+    <a href ng-click="player.playPause(tracks, $index)">
+      {{ track.title }}
+    </a>
   </div>
 </div>
