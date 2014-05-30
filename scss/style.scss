@@ -91,6 +91,10 @@ h6, small, .h4 { font-size: .875rem; }
 .clip { overflow: hidden; }
 .left { float: left; }
 .right { float: right; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.absolute-left { top: 0; right: 50%; bottom: 0; left: 0; }
+.absolute-right { top: 0; right: 0; bottom: 0; left: 50%; }
 
 
 // Icons
@@ -152,7 +156,7 @@ h6, small, .h4 { font-size: .875rem; }
   padding-left: 2*$space;
   transition: all .2s ease;
   &:hover {
-    box-shadow: inset 0 0 0 2px white;
+    box-shadow: inset 0 0 0 1px white;
   }
 }
 @-webkit-keyframes popin {
@@ -169,6 +173,7 @@ $avatar-size: 196px;
 .avatars {
   position: relative;
   height: $avatar-size;
+  overflow: hidden;
 }
 .avatar {
   position: absolute;
@@ -235,6 +240,7 @@ $logotype-padding: 100% - percentage(31/37);
   position: relative;
   height: 0;
   padding-bottom: 7.5%;
+  overflow: hidden;
 }
 .logotype--mr,
 .logotype--mrs,
@@ -276,8 +282,8 @@ $logotype-padding: 100% - percentage(31/37);
   .logotype--blk { left: 50%; }
 }
 .mr_mrs {
-  .logotype--mr { left: 20%; margin-left: -5%; }
-  .logotype--mrs { left: 50%; margin-left: -5%; }
+  .logotype--mr { left: 20%; margin-left: -4%; }
+  .logotype--mrs { left: 50%; margin-left: -4%; }
   .logotype--jxn {
     left: 100%;
     opacity: 0;
@@ -311,3 +317,7 @@ $logotype-padding: 100% - percentage(31/37);
   top: -$space; right: 0; bottom: -$space; left: 0;
   cursor: pointer;
 }
+
+.clickable { cursor: pointer; }
+
+.outline { outline: 1px solid cyan; background-color: rgba(cyan,.2); }

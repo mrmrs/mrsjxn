@@ -1,4 +1,4 @@
-<header class="center" ng-class="view">
+<header class="center relative py3" ng-class="view">
   <div class="avatars py2">
     <div class="avatar avatar--skullcat">
       <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -31,5 +31,8 @@
       <img src="assets/type-blk-08.svg"/>
     </div>
   </div>
+  <div class="absolute absolute-left clickable" ng-hide="view == 'jxnblk'" ng-click="setView('mr_mrs')"></div>
+  <div class="absolute clickable" ng-hide="view == 'mrsjxn'" ng-class="{'absolute-left': view == 'jxnblk', 'absolute-right': view == 'mr_mrs'}" ng-click="setView('mrsjxn')"></div>
+  <div class="absolute absolute-right clickable" ng-hide="view == 'mr_mrs'" ng-click="setView('jxnblk')"></div>
 </header>
 
