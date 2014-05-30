@@ -163,15 +163,13 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
   $scope.tracks = [];
   $scope.data;
   $scope.view = 'mrsjxn';
-  //$scope.views = ['mr_mrs', 'mrsjxn', 'jxnblk'];
-  //$scope.viewIndex = 1;
-  //$scope.view = $scope.views[$scope.viewIndex];
   $scope.player = player;
 
   $http.get('/tracks.json').success(function(data){
     $scope.data = data;
     $scope.isLoading = false;
     $scope.tracks = $scope.data[$scope.view];
+    player.load($scope.tracks);
   });
 
   $scope.setView = function(view) {

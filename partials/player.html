@@ -1,12 +1,15 @@
-<h2>{{ player.tracks[player.i].user.username }}</h2>
-<h1>{{ player.tracks[player.i].title }}</h1>
 <a href
+  class="h2 butt-circle mb2"
   ng-hide="player.playing"
   ng-click="player.play(player.tracks, player.i)">
-  <div icon="play"></div>
+  <div icon="play" class="nudge-left"></div>
 </a>
 <a href
+  class="h2 butt-circle mb2"
   ng-show="player.playing"
   ng-click="player.pause()">
   <div icon="pause"></div>
 </a>
+<h1 class="h2 caps mb2">{{ player.tracks[player.i].title }}</h1>
+<div class="progress">
+</div>

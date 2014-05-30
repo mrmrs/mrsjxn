@@ -1,9 +1,19 @@
-<div ng-include="'partials/header.html'"></div>
-<div class="container px2 py4">
-  <div ng-include="'partials/player.html'"></div>
+<nav class="h4 bold caps center clip px2">
+  <a href ng-click="setView('mr_mrs')" class="left tappable px1" >MrMrs</a>
+  <a href ng-click="setView('jxnblk')" class="right tappable px1" >Jxnblk</a>
+  <a href ng-click="setView('mrsjxn')" class="tappable px1" >MrsJxn</a>
+</nav>
+<div class="py2">
+  <div ng-include="'partials/header.html'"></div>
+  <div class="center container p2" ng-include="'partials/player.html'"></div>
+</div>
+<div class="container py4">
   <div ng-repeat="track in tracks">
-    <a href ng-click="player.playPause(tracks, $index)">
-      {{ track.title }}
+    <a href
+      class="h3 bold butt-tap"
+      ng-class="{'butt-active': track.id == ( player.playing.id || player.paused.id ) }"
+      ng-click="player.playPause(tracks, $index)">
+        {{ track.title }}
     </a>
   </div>
 </div>

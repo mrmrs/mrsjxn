@@ -1,5 +1,5 @@
-<header class="center py4">
-  <div class="avatars" ng-class="view">
+<header class="center" ng-class="view">
+  <div class="avatars py2">
     <div class="avatar avatar--skullcat">
       <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
         <path d="M16 7 C13 7 2 9 2 16 C2 23 6 23 10 24 L11 28 L12 26 L20 26 L21 28 L22 24 C26 23 30 23 30 16 C30 9 19 7 16 7 M4 18 A4 4 0 0 1 12 18 A4 4 0 0 1 4 18 M20 18 A4 4 0 0 1 28 18 A4 4 0 0 1 20 18 "/>
@@ -16,13 +16,20 @@
       </svg>
     </div>
   </div>
-  <div class="center px2 py4">
-    <h1 class="h0 caps">MrsJxn</h1>
-    <nav>
-      <a href ng-click="setView('mr_mrs')" class="caps butt m2" ng-class="{'butt-active': view == 'mr_mrs'}">MrMrs</a>
-      <a href ng-click="setView('mrsjxn')" class="caps butt m2" ng-class="{'butt-active': view == 'mrsjxn'}">MrsJxn</a>
-      <a href ng-click="setView('jxnblk')" class="caps butt m2" ng-class="{'butt-active': view == 'jxnblk'}">Jxnblk</a>
-    </nav>
+
+  <div class="logotype py2">
+    <div class="logotype--mr">
+      <img src="assets/type-mr-07.svg"/>
+    </div>
+    <div class="logotype--mrs">
+      <img src="assets/type-mrs-05.svg"/>
+    </div>
+    <div class="logotype--jxn">
+      <img src="assets/type-jxn-06.svg"/>
+    </div>
+    <div class="logotype--blk">
+      <img src="assets/type-blk-08.svg"/>
+    </div>
   </div>
 </header>
 
