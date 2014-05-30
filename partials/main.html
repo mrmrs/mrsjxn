@@ -1,9 +1,9 @@
-<nav class="h4 bold caps center clip px2">
-  <a href ng-click="setView('mr_mrs')" class="left tappable px1" >MrMrs</a>
-  <a href ng-click="setView('jxnblk')" class="right tappable px1" >Jxnblk</a>
-  <a href ng-click="setView('mrsjxn')" class="tappable px1" >MrsJxn</a>
+<nav class="h4 bold caps center clip px2 py1">
+  <a href ng-click="setView('mr_mrs')" class="left tappable px1" ng-class="{'active-dot': view == 'mr_mrs'}" >MrMrs</a>
+  <a href ng-click="setView('jxnblk')" class="right tappable px1" ng-class="{'active-dot': view == 'jxnblk'}" >Jxnblk</a>
+  <a href ng-click="setView('mrsjxn')" class="inline-block tappable px1" ng-class="{'active-dot': view == 'mrsjxn'}" >MrsJxn</a>
 </nav>
-<div class="py2">
+<div class="py2" ng-class="view">
   <div ng-include="'partials/header.html'"></div>
   <div class="center container p2" ng-include="'partials/player.html'"></div>
 </div>

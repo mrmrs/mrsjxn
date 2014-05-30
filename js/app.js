@@ -166,7 +166,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
   $scope.view = 'mrsjxn';
   $scope.player = player;
 
-  $http.get('/tracks.json').success(function(data){
+  $http.get('tracks.json').success(function(data){
     $scope.data = data;
     $scope.isLoading = false;
     $scope.tracks = $scope.data[$scope.view];

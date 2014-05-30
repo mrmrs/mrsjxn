@@ -59,7 +59,7 @@ h6, small, .h4 { font-size: .875rem; }
 .regular { font-weight: 400; }
 .bold { font-weight: 600; }
 .center { text-align: center; }
-.tappable { line-height: 3rem; }
+.tappable { line-height: 2rem; }
 
 
 // Padding
@@ -97,6 +97,7 @@ h6, small, .h4 { font-size: .875rem; }
   margin-left: auto;
 }
 .block { display: block; }
+.inline-block { display: inline-block; }
 .clip { overflow: hidden; }
 .left { float: left; }
 .right { float: right; }
@@ -133,6 +134,7 @@ h6, small, .h4 { font-size: .875rem; }
   color: $dark;
   background-color: white;
 }
+
 .butt-circle {
   display: inline-block;
   width: 3em;
@@ -171,9 +173,8 @@ h6, small, .h4 { font-size: .875rem; }
 }
 .butt-tap {
   display: block;
-  line-height: 3em;
-  padding-right: 1em;
-  padding-left: 1em;
+  line-height: 2em;
+  padding: .5em 1em;
   transition: all .3s ease;
   box-shadow: inset 0 0 0 1px transparent;
   &:hover {
@@ -339,10 +340,34 @@ $logotype-padding: 100% - percentage(31/37);
   cursor: pointer;
 }
 
+.active-dot {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+  }
+}
 .clickable { cursor: pointer; }
-
 .border-bottom { border-bottom: 1px solid white; }
 
+/*
+.hover-group {
+  .hover-show {
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+    opacity: 0;
+  }
+  &:hover .hover-show {
+    opacity: 1;
+  }
+}
+*/
 .outline { outline: 1px solid cyan; background-color: rgba(cyan,.2); }
 
 .fadein {
@@ -357,3 +382,13 @@ $logotype-padding: 100% - percentage(31/37);
   from { opacity: 0; }
     to { opacity: 1; }
 }
+.bg-tachyons {
+  background-image: url(../assets/tachyons.svg);
+  background-size: 304px 304px;
+  background-repeat: no-repeat;
+  transition: background .6s ease;
+}
+.mr_mrs .bg-tachyons { background-position: 55% top; }
+.mrsjxn .bg-tachyons { background-position: 50% top; }
+.jxnblk .bg-tachyons { background-position: 45% top; }
+
