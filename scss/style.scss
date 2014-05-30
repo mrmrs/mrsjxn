@@ -270,24 +270,25 @@ $logotype-padding: 100% - percentage(31/37);
   position: absolute;
   transition: all .4s ease;
   width: 30%;
-  svg, img {
+  svg {
     box-sizing: border-box;
     width: 100%;
     height: auto;
     transition: all .4s ease;
   }
 }
-.logotype--mr img { padding-left: $logotype-padding; }
-.logotype--blk img { padding-right: $logotype-padding; }
+.logotype--mr svg {
+  padding-left: $logotype-padding;
+  margin-left: $logotype-padding;
+}
+.logotype--blk svg { padding-right: $logotype-padding; }
 .mrsjxn {
   .logotype--mr { left: -30%; opacity: 0; }
   .logotype--mrs { left: 20%; margin-left: 2%; }
   .logotype--jxn {
     left: 50%;
     margin-left: 2%;
-    img {
-      padding-right: $logotype-padding;
-    }
+    svg { padding-right: $logotype-padding; }
   }
   .logotype--blk { left: 100%; opacity: 0; }
 }
@@ -296,8 +297,9 @@ $logotype-padding: 100% - percentage(31/37);
   .logotype--mrs { left: -30%; opacity: 0; }
   .logotype--jxn {
     left: 20%; 
-    img {
+    svg {
       padding-left: $logotype-padding;
+      margin-left: $logotype-padding;
     }
   }
   .logotype--blk { left: 50%; }
@@ -308,9 +310,7 @@ $logotype-padding: 100% - percentage(31/37);
   .logotype--jxn {
     left: 100%;
     opacity: 0;
-    img {
-      padding-right: $logotype-padding;
-    }
+    svg { padding-right: $logotype-padding; }
   }
   .logotype--blk { left: 100%; opacity: 0; }
 }
