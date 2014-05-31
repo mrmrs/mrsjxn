@@ -74,6 +74,26 @@ app.factory('player', function ($document, $rootScope, $http) {
     });
     
   }, false);
+ 
+  // Add native JS event listener for keyboard shortcuts.
+  var checkKey = function checkKey(e) {
+    var e = e || window.event;
+
+    if (e.keyCode == '32') {
+      // Spacebar
+      player.playPause(player.tracks, player.i);
+      // Stop event bubbling so window doesn't scroll
+      return false;
+    } else if (e.keyCode == '74') {
+      // j = down in vim
+      $rootScope.$apply(player.next());
+    } else if (e.keyCode == '75') {
+      // k = up in vim
+      $rootScope.$apply(player.previous());
+    }
+  };
+  document.onkeydown = checkKey;
+
 
   return player;
 
