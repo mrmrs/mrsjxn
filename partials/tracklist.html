@@ -8,8 +8,8 @@
       ng-click="player.playPause(tracks, $index)">
         {{ track.title }}
     </a>
-    <div class="table-cell nowrap px2">
-      <span class="h5 regular mr1">{{ track.duration | playTime }}</span>
+    <div class="table-cell nowrap px1">
+      <span class="h5 regular mr1 mobile-hide">{{ track.duration | playTime }}</span>
       <a ng-href="{{track.permalink_url}}" target="_blank" class="h5 butt">Details</a>
     </div>
   </li>
