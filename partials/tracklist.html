@@ -1,16 +1,18 @@
 <ul class="list-simple fadein">
   <li
-    class="table tappable container py1"
+    class="tappable container px2 py1"
     ng-class="{'active': track.id == ( player.playing.id || player.paused.id ) }"
     ng-repeat="track in tracks">
-    <a href
-      class="block table-cell table-body h3 bold px2"
-      ng-click="player.playPause(tracks, $index)">
-        {{ track.title }}
-    </a>
-    <div class="table-cell nowrap px1">
-      <span class="h5 regular mr1 mobile-hide">{{ track.duration | playTime }}</span>
-      <a ng-href="{{track.permalink_url}}" target="_blank" class="h5 butt">Details</a>
+    <div class="table">
+      <a href
+        class="block table-cell table-body h3 bold"
+        ng-click="player.playPause(tracks, $index)">
+          {{ track.title }}
+      </a>
+      <div class="table-cell nowrap">
+        <span class="h5 regular mr1 mobile-hide">{{ track.duration | playTime }}</span>
+        <a ng-href="{{track.permalink_url}}" target="_blank" class="h5 butt">Details</a>
+      </div>
     </div>
   </li>
 </ul>
