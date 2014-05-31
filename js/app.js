@@ -1,12 +1,6 @@
 'use strict';
 
 var app = angular.module('app', ['ngTouch']);
-/*
-  config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'partials/main.html'});
-    $routeProvider.otherwise({ redirectTo: '/' });
-  }]);
-*/
 
 // Mrsjxn API account registered under Jxnblk's SoundCloud Account
 var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6';
@@ -182,15 +176,18 @@ app.filter('playTime', function() {
 
 // Main Controller
 app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($scope, $http, $location, player) {
-  $scope.isLoading = true;
+
   $scope.tracks = [];
   $scope.data;
-  $scope.view = 'mrsjxn';
+  if ($location.search().v) {
+    $scope.view = $location.search().v;
+  } else {
+    $scope.view = 'mrsjxn';
+  }
   $scope.player = player;
 
   $http.get('tracks.json').success(function(data){
     $scope.data = data;
-    $scope.isLoading = false;
     $scope.tracks = $scope.data[$scope.view];
     player.load($scope.tracks);
   });
@@ -199,10 +196,13 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     $scope.view = view;
     $scope.tracks = $scope.data[view];
     if(!player.playing) player.load($scope.tracks);
+    $location.search({v: view});
   };
   
   $scope.currentTimeMS = 0;
   $scope.durationMS = 0;
+
+  // Progress bar
   function updateView() {
     $scope.$apply(function() {
       $scope.currentBufferPercentage = ((player.audio.buffered.length && player.audio.buffered.end(0)) / player.audio.duration) * 100;
@@ -211,7 +211,10 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
       $scope.durationMS = (player.audio.duration * 1000).toFixed();
     });
   };  
+
   player.audio.addEventListener('timeupdate', updateView, false);
+
+  // Scrubber
   $scope.seekTo = function($event){
     var xpos = $event.offsetX / $event.target.offsetWidth;
     player.audio.currentTime = (xpos * player.audio.duration);
