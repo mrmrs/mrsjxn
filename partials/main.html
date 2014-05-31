@@ -1,4 +1,6 @@
-<div class="bg-fixed" ng-show="player.playing.background" style="background-image:url({{player.playing.background}});"></div>
+<div class="bg-fixed"
+  ng-show="player.playing.background"
+  style="background-image: url({{player.tracks[player.i].background}});"></div>
 <div class="relative">
   <nav class="h4 bold caps center clip px2 py1">
     <a href ng-click="setView('mr_mrs')" class="left tappable px1" ng-class="{'active-dot': view == 'mr_mrs'}" >MrMrs</a>
@@ -24,4 +26,10 @@
     </ul>
   </div>
   <div ng-include="'partials/footer.html'"></div>
+</div>
+<!-- background image preloader -->
+<div style="width:0;height:0;margin-left:-2048px">
+  <div ng-repeat="artist in data">
+    <div ng-repeat="track in artist" style="background-image: url({{track.background}})"></div>
+  </div>
 </div>

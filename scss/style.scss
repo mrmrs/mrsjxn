@@ -123,11 +123,12 @@ h6, small, .h4 { font-size: .875rem; }
   padding-right: 1em;
   padding-left: 1em;
   text-decoration: none;
-  box-shadow: inset 0 0 0 2px white;
+  box-shadow: inset 0 0 0 2px;
   border-radius: .25rem;
   &:hover {
     color: $dark;
     background-color: white;
+    box-shadow: none;
   }
 }
 .butt-active {
@@ -142,7 +143,7 @@ h6, small, .h4 { font-size: .875rem; }
   text-align: center;
   line-height: 3em;
   text-decoration: none;
-  box-shadow: inset 0 0 0 3px white;
+  box-shadow: inset 0 0 0 3px;
   border-radius: 50%;
   transition: all .1s ease;
   -webkit-animation: popin .1s ease;
@@ -157,6 +158,7 @@ h6, small, .h4 { font-size: .875rem; }
   &:hover {
     color: $dark;
     background-color: white;
+    box-shadow: none;
     svg { fill: $dark; }
   }
 }
@@ -178,7 +180,7 @@ h6, small, .h4 { font-size: .875rem; }
   transition: all .3s ease;
   box-shadow: inset 0 0 0 1px transparent;
   &:hover {
-    box-shadow: inset 0 0 0 1px white;
+    box-shadow: inset 0 0 0 1px;
   }
 }
 @-webkit-keyframes popin {
@@ -320,7 +322,7 @@ $logotype-padding: 100% - percentage(31/37);
 .progress {
   position: relative;
   height: $space;
-  box-shadow: inset 0 0 0 1px white;
+  box-shadow: inset 0 0 0 1px;
 }
 .progress-value {
   position: absolute;
@@ -331,7 +333,7 @@ $logotype-padding: 100% - percentage(31/37);
     display: block;
     height: 2*$space;
     margin-top: -$space/2;
-    border-right: 2px solid white;
+    border-right: 2px solid;
   }
 }
 .progress-overlay {
@@ -354,7 +356,7 @@ $logotype-padding: 100% - percentage(31/37);
   }
 }
 .clickable { cursor: pointer; }
-.border-bottom { border-bottom: 1px solid white; }
+.border-bottom { border-bottom: 1px solid; }
 
 /*
 .hover-group {
@@ -405,6 +407,7 @@ $logotype-padding: 100% - percentage(31/37);
 .bg-fixed {
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
+  //background-image: linear-gradient(transparent,#f00);
   background-size: cover;
   background-position: center center;
   opacity: 1;
@@ -426,4 +429,32 @@ $logotype-padding: 100% - percentage(31/37);
 @keyframes fadeout {
   from { opacity: 1; }
     to { opacity: 0; }
+}
+
+// Style for inverted text
+.dark {
+  color: $dark;
+  .progress,
+  a {
+    color: $dark;
+  }
+  .butt-active,
+  .active-dot:after,
+  .progress-value {
+    background-color: $dark;
+  }
+  .butt-active { color: white; }
+  svg { fill: $dark; }
+  .butt-circle,
+  .butt {
+    color: $dark;
+    &:hover {
+      color: white;
+      background-color: $dark;
+      box-shadow: none;
+      svg {
+        fill: white;
+      }
+    }
+  }
 }
