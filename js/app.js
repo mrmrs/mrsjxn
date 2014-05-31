@@ -5,7 +5,7 @@ var app = angular.module('app', ['ngTouch']);
 // Mrsjxn API account registered under Jxnblk's SoundCloud Account
 var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6';
 
-app.factory('player', function ($document, $rootScope, $http) {
+app.factory('player', function ($document, $rootScope, $http, $location) {
   // Define the audio engine
   var audio = $document[0].createElement('audio');
 
@@ -32,6 +32,7 @@ app.factory('player', function ($document, $rootScope, $http) {
       audio.play();
       player.playing = player.tracks[player.i];
       player.paused = false;
+      $location.search('track', player.playing.title);
     },
     pause: function() {
       audio.pause();
@@ -186,11 +187,22 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
   }
   $scope.player = player;
 
+  function loadTrack(){
+    for (var i=0;i<$scope.tracks.length;i++){
+      if ($scope.tracks[i].title == $location.search().track) {
+        console.log($scope.tracks[i]);
+        player.i = i;
+      }
+    }
+  }
+
   $http.get('tracks.json').success(function(data){
     $scope.data = data;
     $scope.tracks = $scope.data[$scope.view];
     player.load($scope.tracks);
+    if ($location.search().track) loadTrack();
   });
+
 
   $scope.setView = function(view) {
     $scope.view = view;
