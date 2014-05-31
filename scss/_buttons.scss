@@ -2,11 +2,11 @@
 
 .butt {
   display: inline-block;
-  line-height: 2.5em;
-  padding-right: 1em;
-  padding-left: 1em;
+  line-height: 2em;
+  padding-right: .5em;
+  padding-left: .5em;
   text-decoration: none;
-  box-shadow: inset 0 0 0 2px;
+  box-shadow: inset 0 0 0 1px;
   border-radius: .25rem;
   &:hover {
     color: $dark;
@@ -62,12 +62,18 @@
 .butt-tap {
   display: block;
   line-height: 2em;
-  padding: .5em 1em;
+  //padding: .5em 1em;
   transition: all .3s ease;
   box-shadow: inset 0 0 0 1px transparent;
   &:hover {
     box-shadow: inset 0 0 0 1px;
   }
+}
+
+.active {
+  color: $dark;
+  background-color: white;
+  a { color: $dark; }
 }
 
 .active-dot {

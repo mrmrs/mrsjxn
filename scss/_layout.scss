@@ -5,11 +5,15 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 .block { display: block; }
 .inline-block { display: inline-block; }
 .clip { overflow: hidden; }
 .left { float: left; }
 .right { float: right; }
+
+.full-width { width: 100%; }
+
 .relative { position: relative; }
 .absolute { position: absolute; }
 .absolute-left { top: 0; right: 50%; bottom: 0; left: 0; }
