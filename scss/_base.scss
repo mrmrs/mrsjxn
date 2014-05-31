@@ -1,0 +1,25 @@
+// Base
+
+body {
+  font-family: 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: $dark;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+svg {
+  max-height: 100%;
+  fill: white;
+}
+
+.list-simple {
+  list-style: none;
+  padding-left: 0;
+}

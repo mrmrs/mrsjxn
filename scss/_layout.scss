@@ -1,0 +1,16 @@
+// Layout
+
+.container {
+  max-width: 40rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.block { display: block; }
+.inline-block { display: inline-block; }
+.clip { overflow: hidden; }
+.left { float: left; }
+.right { float: right; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.absolute-left { top: 0; right: 50%; bottom: 0; left: 0; }
+.absolute-right { top: 0; right: 0; bottom: 0; left: 50%; }
