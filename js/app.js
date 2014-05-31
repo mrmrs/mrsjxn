@@ -180,6 +180,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
 
   $scope.tracks = [];
   $scope.data;
+  $scope.gif;
   if ($location.search().v) {
     $scope.view = $location.search().v;
   } else {
@@ -201,6 +202,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     $scope.tracks = $scope.data[$scope.view];
     player.load($scope.tracks);
     if ($location.search().track) loadTrack();
+    if ($location.search().gif) gifIt();
   });
 
 
@@ -231,6 +233,15 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     var xpos = $event.offsetX / $event.target.offsetWidth;
     player.audio.currentTime = (xpos * player.audio.duration);
   };
+
+
+  // GIFs
+  function gifIt() {
+    if ($location.search().gif){
+      $scope.gif = $location.search().gif;
+      player.play(player.tracks[player.i]);
+    }
+  }
 
 }]);
 
