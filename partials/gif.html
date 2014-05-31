@@ -1,8 +1,8 @@
 <div class="">
-  <img ng-src="{{ gif }}" class="full-width"/>
+  <img ng-hide="gif == true" ng-src="{{ gif }}" class="full-width"/>
 </div>
 
-<div class="container">
+<div class="container px2 py4">
   <div class="table">
     <div class="table-cell">
       <a href
@@ -24,14 +24,22 @@
     </div>
   </div>
 
-  <form ng-submit="setGif(gif)">
-    <label class="block" for="gif">Image URL</label>
-    <input type="text" ng-model="gif" name="gif" class="block full-width">
-    <input type="submit" value="Update">
+  <div class="table py2 mb2 border-bottom">
+    <div class="table-cell pr2">
+      <a href="https://twitter.com/intent/tweet?text=test&url={{ location.absUrl() | escape }}" target="_blank" class="butt">Tweet</a>
+    </div>
+    <div class="table-cell table-body">
+      <input class="input input-white full-width" type="text" value="{{ location.absUrl() }}" ng-click="onTextClick($event)" >
+    </div>
+  </div>
+
+  <form class="py2" ng-submit="setGif(gif)">
+    <label class="block mb1" for="gif">Image URL</label>
+    <input type="text" ng-model="gif" name="gif" class="input input-white block full-width mb2">
+    <input type="submit" value="Update" class="butt-reset butt">
   </form>
 
-  <div class="py2">
-    <a href="#!" class="butt">Tweet</a>
-    <input type="text" value="location.url()" >
+  <div class="center">
+    <a href ng-click="goHome()" class="butt">Back Home</a>
   </div>
 </div>

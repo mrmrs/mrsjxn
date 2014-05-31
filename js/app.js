@@ -174,14 +174,18 @@ app.filter('playTime', function() {
   };
 });
 
+app.filter('escape', function() {
+  return window.escape;
+});
+
 
 // Main Controller
 app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($scope, $http, $location, player) {
 
   $scope.tracks = [];
+  $scope.location = $location;
   $scope.data;
   $scope.gif;
-  $scope.newGif;
   if ($location.search().v) {
     $scope.view = $location.search().v;
   } else {
@@ -244,13 +248,23 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     }
   }
   $scope.setGif = function(gif) {
-    //console.log('set gif: ' + $scope.newGif);
-    //$scope.gif = $scope.newGif;
     console.log(gif);
-    console.log('old gif: ' + $scope.gif);
     $scope.gif = gif;
     $location.search('gif', $scope.gif);
   }
+  /*
+  $scope.newGif = function() {
+    console.log('new gif');
+    $scope.gif = 'http://i.imgur.com/FvKyA.gif';
+  }
+  */
+  $scope.goHome = function() {
+    $scope.gif = null;
+    $location.search('gif', null);
+  }
+  $scope.onTextClick = function($event) {
+    $event.target.select();
+  };
 
 }]);
 
