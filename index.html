@@ -25,17 +25,16 @@
       <a href ng-click="setView('mrsjxn')" class="inline-block tappable px1" ng-class="{'active-dot': view == 'mrsjxn'}" >MrsJxn</a>
     </nav>
 
-    <main class="py2">
+    <div ng-if="gif" ng-include="'partials/gif.html'"></div>
 
-      <header ng-hide="gif" class="relative py3" ng-include="'partials/header.html'"></header>
+    <main ng-hide="gif" class="py2">
 
-      <div ng-if="gif" ng-include="'partials/gif.html'"></div>
+      <header class="relative py3" ng-include="'partials/header.html'"></header>
+
 
       <div id="player" class="center container p2 fadein" ng-include="'partials/player.html'"></div>
 
-      <div ng-hide="gif" id="tracklist" ng-include="'partials/tracklist.html'"></div>
-
-      <!-- add gif controls -->
+      <div id="tracklist" ng-include="'partials/tracklist.html'"></div>
 
     </main>
 

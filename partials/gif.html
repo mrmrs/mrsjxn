@@ -1,3 +1,37 @@
 <div class="">
   <img ng-src="{{ gif }}" class="full-width"/>
 </div>
+
+<div class="container">
+  <div class="table">
+    <div class="table-cell">
+      <a href
+        class="butt-icon"
+        ng-hide="player.playing"
+        ng-click="player.play(player.tracks, player.i)">
+          <div icon="play" class=""></div>
+      </a>
+      <a href
+        class="butt-icon"
+        ng-show="player.playing"
+        ng-click="player.pause()">
+          <div icon="pause"></div>
+      </a>
+    </div>
+    <div class="table-cell table-body px2">
+      <h1 class="h3 caps regular">{{ player.tracks[player.i].user.username }}</h1>
+      <h1 class="h2 caps">{{ player.tracks[player.i].title }}</h1>
+    </div>
+  </div>
+
+  <form ng-submit="setGif(gif)">
+    <label class="block" for="gif">Image URL</label>
+    <input type="text" ng-model="gif" name="gif" class="block full-width">
+    <input type="submit" value="Update">
+  </form>
+
+  <div class="py2">
+    <a href="#!" class="butt">Tweet</a>
+    <input type="text" value="location.url()" >
+  </div>
+</div>
