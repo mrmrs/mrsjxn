@@ -8,11 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.min.js"></script>
 </head>
 <body ng-controller="MainCtrl" ng-class="[view, player.playing.color]">
 
+  <!--
   <div ng-view></div>
+  -->
+
+  <div ng-include src="'partials/main.html'"></div>
   
   <script src="js/app.js"></script>
   <!--

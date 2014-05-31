@@ -1,10 +1,12 @@
 'use strict';
 
-var app = angular.module('app', ['ngRoute']).
+var app = angular.module('app', ['ngTouch']);
+/*
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'partials/main.html'});
     $routeProvider.otherwise({ redirectTo: '/' });
   }]);
+*/
 
 // Mrsjxn API account registered under Jxnblk's SoundCloud Account
 var clientID = 'bcad0f5473e2f97dbe6b4011c4277ac6';
