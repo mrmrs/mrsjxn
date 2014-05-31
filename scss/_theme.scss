@@ -48,4 +48,16 @@
       }
     }
   }
+  .active {
+    color: white;
+    background-color: $dark;
+    a {
+      color: white;
+    }
+  }
+  .butt-tap{
+    &:hover {
+      box-shadow: inset 0 0 0 1px $dark;
+    }
+  }
 }

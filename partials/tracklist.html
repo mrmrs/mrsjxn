@@ -1,11 +1,11 @@
 <ul class="list-simple fadein">
   <li
-    class="tappable container px2 py1"
+    class="butt-tap container px2" 
     ng-class="{'active': track.id == ( player.playing.id || player.paused.id ) }"
     ng-repeat="track in tracks">
     <div class="table">
       <a href
-        class="block table-cell table-body h3 bold"
+        class="block table-cell table-body py1 h3 bold"
         ng-click="player.playPause(tracks, $index)">
           {{ track.title }}
       </a>
@@ -16,3 +16,6 @@
     </div>
   </li>
 </ul>
+<div class="container center h4 caps">
+  <a ng-href="{{ tracks[0].user.permalink_url }}">{{ tracks[0].user.username }} on SoundCloud</a>
+</div>
