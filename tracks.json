@@ -24,7 +24,7 @@
       "waveform_url": "http://w1.sndcdn.com/FzaBDGjMcciq_m.png",
       "stream_url": "http://api.soundcloud.com/tracks/151703031/stream",
       "attachments_uri": "http://api.soundcloud.com/tracks/151703031/attachments",
-      "background": "https://exposure-4.imgix.net/production/photos/e99ysihk59ngjzwfahqkjtwzucexw8cuj85m/original.jpg?1386569647&q=95&fm=jpg&w=1000"
+      "background": "assets/images/5.jpg"
     }, {
       "kind": "track",
       "id": 121513132,
@@ -49,7 +49,8 @@
       "waveform_url": "http://w1.sndcdn.com/1qDNq1bTxWZs_m.png",
       "stream_url": "http://api.soundcloud.com/tracks/121513132/stream",
       "download_url": "http://api.soundcloud.com/tracks/121513132/download",
-      "attachments_uri": "http://api.soundcloud.com/tracks/121513132/attachments"
+      "attachments_uri": "http://api.soundcloud.com/tracks/121513132/attachments",
+      "background": "assets/images/31.jpg"
     }, {
       "kind": "track",
       "id": 93014855,
@@ -75,7 +76,7 @@
       "stream_url": "http://api.soundcloud.com/tracks/93014855/stream",
       "download_url": "http://api.soundcloud.com/tracks/93014855/download",
       "attachments_uri": "http://api.soundcloud.com/tracks/93014855/attachments",
-      "background": "assets/images/touch-this.jpg"
+      "background": "assets/images/6.jpg"
     }, {
       "kind": "track",
       "id": 92592508,
@@ -101,7 +102,7 @@
       "stream_url": "http://api.soundcloud.com/tracks/92592508/stream",
       "download_url": "http://api.soundcloud.com/tracks/92592508/download",
       "attachments_uri": "http://api.soundcloud.com/tracks/92592508/attachments",
-      "background": "assets/images/homework.jpg"
+      "background": "assets/images/23.jpg"
     }, {
       "kind": "track",
       "id": 91810893,
@@ -125,7 +126,8 @@
       "artwork_url": null,
       "waveform_url": "http://w1.sndcdn.com/F7EQewmYCgqB_m.png",
       "stream_url": "http://api.soundcloud.com/tracks/91810893/stream",
-      "attachments_uri": "http://api.soundcloud.com/tracks/91810893/attachments"
+      "attachments_uri": "http://api.soundcloud.com/tracks/91810893/attachments",
+      "background": "assets/images/49.jpg"
     }, {
       "kind": "track",
       "id": 83802023,
@@ -176,7 +178,7 @@
       "stream_url": "http://api.soundcloud.com/tracks/76918397/stream",
       "download_url": "http://api.soundcloud.com/tracks/76918397/download",
       "attachments_uri": "http://api.soundcloud.com/tracks/76918397/attachments",
-      "background": "assets/images/space-owl.jpg"
+      "background": "assets/images/50.jpg"
     }, {
       "kind": "track",
       "id": 67855055,
@@ -200,7 +202,8 @@
       "artwork_url": null,
       "waveform_url": "http://w1.sndcdn.com/C6Q23LXW8HW7_m.png",
       "stream_url": "http://api.soundcloud.com/tracks/67855055/stream",
-      "attachments_uri": "http://api.soundcloud.com/tracks/67855055/attachments"
+      "attachments_uri": "http://api.soundcloud.com/tracks/67855055/attachments",
+      "background": "assets/images/48.jpg"
     }
   ],
   "jxnblk": [{
@@ -542,7 +545,7 @@
     "stream_url": "http://api.soundcloud.com/tracks/135636698/stream",
     "download_url": "http://api.soundcloud.com/tracks/135636698/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/135636698/attachments",
-    "background": "assets/images/beach-2.jpg"
+    "background": "assets/images/jat-1.jpg"
   },
   {
     "kind": "track",
@@ -568,7 +571,8 @@
     "waveform_url": "http://w1.sndcdn.com/gKdx2W0qAWHm_m.png",
     "stream_url": "http://api.soundcloud.com/tracks/132605816/stream",
     "download_url": "http://api.soundcloud.com/tracks/132605816/download",
-    "attachments_uri": "http://api.soundcloud.com/tracks/132605816/attachments"
+    "attachments_uri": "http://api.soundcloud.com/tracks/132605816/attachments",
+    "background": "assets/images/jat-2.jpg"
   },
   {
     "kind": "track",
@@ -594,7 +598,8 @@
     "waveform_url": "http://w1.sndcdn.com/ZFEgfYFy06LL_m.png",
     "stream_url": "http://api.soundcloud.com/tracks/131793679/stream",
     "download_url": "http://api.soundcloud.com/tracks/131793679/download",
-    "attachments_uri": "http://api.soundcloud.com/tracks/131793679/attachments"
+    "attachments_uri": "http://api.soundcloud.com/tracks/131793679/attachments",
+    "background": "assets/images/hips.jpg"
   },
   {
     "kind": "track",
@@ -621,7 +626,7 @@
     "stream_url": "http://api.soundcloud.com/tracks/122851721/stream",
     "download_url": "http://api.soundcloud.com/tracks/122851721/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/122851721/attachments",
-    "background": "assets/images/trees-2.jpg"
+    "background": "assets/images/37-bw.jpg"
   },
   {
     "kind": "track",
@@ -647,7 +652,8 @@
     "waveform_url": "http://w1.sndcdn.com/NW8aYff3clBg_m.png",
     "stream_url": "http://api.soundcloud.com/tracks/114040674/stream",
     "download_url": "http://api.soundcloud.com/tracks/114040674/download",
-    "attachments_uri": "http://api.soundcloud.com/tracks/114040674/attachments"
+    "attachments_uri": "http://api.soundcloud.com/tracks/114040674/attachments",
+    "background": "assets/images/40.jpg"
   },
   {
     "kind": "track",
@@ -673,7 +679,8 @@
     "waveform_url": "http://w1.sndcdn.com/3nJnERPzezSu_m.png",
     "stream_url": "http://api.soundcloud.com/tracks/107103787/stream",
     "download_url": "http://api.soundcloud.com/tracks/107103787/download",
-    "attachments_uri": "http://api.soundcloud.com/tracks/107103787/attachments"
+    "attachments_uri": "http://api.soundcloud.com/tracks/107103787/attachments",
+    "background": "assets/images/old.jpg"
   }
   ]
 }
