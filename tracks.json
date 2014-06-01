@@ -262,7 +262,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/150188137/stream",
     "download_url": "http://api.soundcloud.com/tracks/150188137/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/150188137/attachments",
-    "background": "assets/images/bridge-2.jpg"
+    "background": "assets/images/bridge-2.jpg",
+    "gif": "http://37.media.tumblr.com/2f30d4b7dd79ade8673da3204c48519c/tumblr_n61rz6ROxr1ttjwiao1_400.gif"
   }, {
     "kind": "track",
     "id": 137608823,
@@ -367,7 +368,8 @@
     "waveform_url": "http://w1.sndcdn.com/5Cwgkwz3GOkf_m.png",
     "stream_url": "http://api.soundcloud.com/tracks/67991836/stream",
     "attachments_uri": "http://api.soundcloud.com/tracks/67991836/attachments",
-    "background": "assets/images/dirigible-1.jpg"
+    "background": "assets/images/dirigible-1.jpg",
+    "gif": "http://37.media.tumblr.com/c5334ee34d3a7a8a2cc434aa915ed84b/tumblr_n63xrabtl21sp53yeo1_400.gif"
   }, {
     "kind": "track",
     "id": 51803494,
