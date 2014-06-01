@@ -25,18 +25,15 @@
   </div>
 
   <div class="py2">
-    <h2 class="h3 mb1">Share:</h2>
-    <div class="table">
-      <div class="table-cell pr2">
-        <a href="https://twitter.com/intent/tweet?text=Bump this:&url={{ location.absUrl() | escape }}" target="_blank" class="butt">Tweet</a>
-      </div>
-      <div class="table-cell table-body">
-        <input class="input input-white full-width" type="text" value="{{ location.absUrl() }}" ng-click="onTextClick($event)" >
-      </div>
-    </div>
+    <a href="https://twitter.com/intent/tweet?text=Bump this:&url={{ location.absUrl() | escape }}" target="_blank" class="butt nowrap mr2">
+      <span icon="twitter" class="icon-small"></span>
+      Tweet
+    </a>
+    <label>Link:</label>
+    <input class="input input-white xfull-width" type="text" value="{{ location.absUrl() }}" ng-click="onTextClick($event)" >
   </div>
 
-  <form class="py2" ng-submit="setGif(gif)">
+  <form class="py4" ng-submit="setGif(gif)">
     <h2 class="h3 mb1">Customize:</h2>
     <div class="table">
       <div class="table-cell pr2">

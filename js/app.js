@@ -102,7 +102,8 @@ app.directive('icon', function() {
         play: 'M0 0 L32 16 L0 32 z',
         pause: 'M0 0 H12 V32 H0 z M20 0 H32 V32 H20 z',
         previous: 'M0 0 H4 V14 L32 0 V32 L4 18 V32 H0 z',
-        next: 'M0 0 L28 14 V0 H32 V32 H28 V18 L0 32 z'
+        next: 'M0 0 L28 14 V0 H32 V32 H28 V18 L0 32 z',
+        twitter: 'M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4'
       };
   return {
     restrict: 'A',

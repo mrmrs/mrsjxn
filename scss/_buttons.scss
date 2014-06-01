@@ -12,6 +12,9 @@
     color: $dark;
     background-color: white;
     box-shadow: none;
+    svg {
+      fill: $dark;
+    }
   }
 }
 
