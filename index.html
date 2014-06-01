@@ -13,6 +13,7 @@
 <body ng-controller="MainCtrl" ng-class="[view, player.playing.color]">
 
   <div id="image-background" class="bg-fixed"
+    ng-cloak
     ng-show="player.playing.background && !gif"
     style="background-image: url({{player.tracks[player.i].background}});">
   </div>
