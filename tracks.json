@@ -130,7 +130,8 @@
       "waveform_url": "http://w1.sndcdn.com/F7EQewmYCgqB_m.png",
       "stream_url": "http://api.soundcloud.com/tracks/91810893/stream",
       "attachments_uri": "http://api.soundcloud.com/tracks/91810893/attachments",
-      "background": "assets/images/49.jpg"
+      "background": "assets/images/49.jpg",
+      "gif": "http://i.imgur.com/xx4Hetb.gif"
     }, {
       "kind": "track",
       "id": 83802023,
