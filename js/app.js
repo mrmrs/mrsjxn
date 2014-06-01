@@ -91,38 +91,8 @@ app.factory('player', function ($document, $rootScope, $http, $location) {
   };
   document.onkeydown = checkKey;
 
-
   return player;
 
-  // Returns the player, audio, track, and other objects
-  /*
-  return {
-    restrict: 'A',
-    scope: true,
-    link: function (scope, elem, attrs) {
-      scope.player = player;
-      scope.audio = audio;
-      scope.currentTime = 0;
-      scope.duration = 0;
-
-      // Updates the currentTime and duration for the audio
-      audio.addEventListener('timeupdate', function() {
-        if (scope.track == player.track || (scope.playlist && scope.playlist.tracks == player.tracks)){
-          scope.$apply(function() {
-            scope.currentTime = (audio.currentTime * 1000).toFixed();
-            scope.duration = (audio.duration * 1000).toFixed();
-          });  
-        };
-      }, false);
-
-      // Handle click events for seeking
-      scope.seekTo = function($event){
-        var xpos = $event.offsetX / $event.target.offsetWidth;
-        audio.currentTime = (xpos * audio.duration);
-      };
-    }
-  }
-  */
 });
 
 // Plangular Icons
@@ -196,7 +166,6 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
   function loadTrack(){
     for (var i=0;i<$scope.tracks.length;i++){
       if ($scope.tracks[i].title == $location.search().track) {
-        console.log($scope.tracks[i]);
         player.i = i;
       }
     }
@@ -235,7 +204,11 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
 
   // Scrubber
   $scope.seekTo = function($event){
-    var xpos = $event.offsetX / $event.target.offsetWidth;
+    if ($event.offsetX) {
+      var xpos = $event.offsetX / $event.target.offsetWidth;
+    } else if ($event.changedTouches) {
+      var xpos = $event.changedTouches[0].clientX / $event.target.offsetWidth;
+    }
     player.audio.currentTime = (xpos * player.audio.duration);
   };
 
@@ -248,16 +221,9 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     }
   }
   $scope.setGif = function(gif) {
-    console.log(gif);
     $scope.gif = gif;
     $location.search('gif', $scope.gif);
   }
-  /*
-  $scope.newGif = function() {
-    console.log('new gif');
-    $scope.gif = 'http://i.imgur.com/FvKyA.gif';
-  }
-  */
   $scope.goHome = function() {
     $scope.gif = null;
     $location.search('gif', null);
