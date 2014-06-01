@@ -151,7 +151,7 @@ app.filter('escape', function() {
 
 
 // Main Controller
-app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($scope, $http, $location, player) {
+app.controller('MainCtrl', ['$scope', '$http', '$location', '$anchorScroll', 'player', function($scope, $http, $location, $anchorScroll, player) {
 
   $scope.tracks = [];
   $scope.location = $location;
@@ -232,10 +232,12 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
       $scope.setGif('http://i.imgur.com/3TIWj.gif');
       //$scope.setGif('http://i.imgur.com/FvKyA.gif');
     }
+    $anchorScroll();
   }
   $scope.goHome = function() {
     $scope.gif = null;
     $location.search('gif', null);
+    $anchorScroll();
   }
   $scope.onTextClick = function($event) {
     $event.target.select();
