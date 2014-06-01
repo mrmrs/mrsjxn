@@ -51,7 +51,8 @@
       "stream_url": "http://api.soundcloud.com/tracks/121513132/stream",
       "download_url": "http://api.soundcloud.com/tracks/121513132/download",
       "attachments_uri": "http://api.soundcloud.com/tracks/121513132/attachments",
-      "background": "assets/images/31.jpg"
+      "background": "assets/images/31.jpg",
+      "gif": "http://bukk.it/oprahs-bees.gif"
     }, {
       "kind": "track",
       "id": 93014855,
@@ -154,7 +155,8 @@
       "waveform_url": "http://w1.sndcdn.com/Ru1efuO6JXPx_m.png",
       "stream_url": "http://api.soundcloud.com/tracks/83802023/stream",
       "attachments_uri": "http://api.soundcloud.com/tracks/83802023/attachments",
-      "background": "assets/images/srcd.jpg"
+      "background": "assets/images/srcd.jpg",
+      "gif": "http://mlkshk.com/r/T2DX"
     }, {
       "kind": "track",
       "id": 76918397,
@@ -233,7 +235,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/150853946/stream",
     "download_url": "http://api.soundcloud.com/tracks/150853946/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/150853946/attachments",
-    "background": "assets/images/manhattan-3.jpg"
+    "background": "assets/images/manhattan-3.jpg",
+    "gif": "http://i.imgur.com/CXn2Nj8.gif"
   }, {
     "kind": "track",
     "id": 150188137,

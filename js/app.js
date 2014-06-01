@@ -229,7 +229,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     if (player.playing.gif) {
       $scope.setGif(player.playing.gif);
     } else {
-      $scope.setGif('http://stream1.gifsoup.com/view/12457/yip-yips-o.gif');
+      $scope.setGif('http://i.imgur.com/3TIWj.gif');
       //$scope.setGif('http://i.imgur.com/FvKyA.gif');
     }
   }
