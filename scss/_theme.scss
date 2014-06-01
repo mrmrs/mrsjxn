@@ -3,6 +3,12 @@
 .clickable { cursor: pointer; }
 .border-bottom { border-bottom: 1px solid; }
 .outline { outline: 1px solid cyan; }
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 .bg-fixed {
   position: fixed;
