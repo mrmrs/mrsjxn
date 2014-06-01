@@ -225,6 +225,14 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     $scope.gif = gif;
     $location.search('gif', $scope.gif);
   }
+  $scope.newGif = function() {
+    if (player.playing.gif) {
+      $scope.setGif(player.playing.gif);
+    } else {
+      $scope.setGif('http://stream1.gifsoup.com/view/12457/yip-yips-o.gif');
+      //$scope.setGif('http://i.imgur.com/FvKyA.gif');
+    }
+  }
   $scope.goHome = function() {
     $scope.gif = null;
     $location.search('gif', null);
