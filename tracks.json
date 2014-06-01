@@ -690,7 +690,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/107103787/stream",
     "download_url": "http://api.soundcloud.com/tracks/107103787/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/107103787/attachments",
-    "background": "assets/images/old.jpg"
+    "background": "assets/images/old.jpg",
+    "gif": "http://31.media.tumblr.com/8a2edcbe3f745e31dd67921874729de2/tumblr_n5w7g3TdkM1shxu82o2_400.gif"
   }
   ]
 }
