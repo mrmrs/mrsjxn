@@ -474,7 +474,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/67982131/stream",
     "download_url": "http://api.soundcloud.com/tracks/67982131/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/67982131/attachments",
-    "background": "assets/images/shy-kitten.jpg"
+    "background": "assets/images/shy-kitten.jpg",
+    "gif": "http://37.media.tumblr.com/3091f6cf22438ea53c3b3773bb70dfb1/tumblr_n63u4tFx2J1rvekoro1_400.gif"
   }, {
     "kind": "track",
     "id": 67972898,
