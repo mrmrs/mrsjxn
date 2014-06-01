@@ -45,9 +45,8 @@
 
   <!-- hidden background image preloader -->
   <div style="width:0;height:0;margin-left:-2048px">
-    <div ng-repeat="artist in data">
-      <div ng-repeat="track in artist" style="background-image: url({{track.background}})"></div>
-    </div>
+    <div style="background-image: url({{ data[view][player.i].background }})"></div>
+    <div style="background-image: url({{ data[view][player.i+1].background }})"></div>
   </div>
 
 
