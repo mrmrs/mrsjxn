@@ -14,3 +14,17 @@
   display: table-cell;
   vertical-align: middle;
 }
+
+@media screen and (min-width:40em) {
+  .desktop-table {
+    display: table;
+    width: 100%;
+  }
+  .desktop-table-fixed {
+    table-layout: fixed;
+  }
+  .desktop-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
