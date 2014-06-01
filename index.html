@@ -17,9 +17,10 @@
     style="background-image: url({{player.tracks[player.i].background}});">
   </div>
 
-  <div ng-if="gif" class="table gif" style="background-image:url({{ gif }});"></div>
 
-  <div id="content" class="relative">
+  <div id="content" class="relative" style="height:100%">
+
+    <div ng-if="gif" class="table gif" style="background-image:url({{ gif }});"></div>
 
     <nav ng-hide="gif" class="h4 bold caps center clip px2 py1 fadein">
       <a href ng-click="setView('mr_mrs')" class="left tappable px1" ng-class="{'active-dot': view == 'mr_mrs'}" >MrMrs</a>
