@@ -12,6 +12,9 @@
     color: $dark;
     background-color: white;
     box-shadow: none;
+    svg {
+      fill: $dark;
+    }
   }
 }
 
@@ -50,6 +53,8 @@
 .butt-icon {
   display: inline-block;
   line-height: 4rem;
+  width: 1.5em;
+  height: 4em;
   padding: 0 1em;
   svg {
     position: relative;
@@ -66,7 +71,7 @@
   transition: all .3s ease;
   box-shadow: inset 0 0 0 1px transparent;
   &:hover {
-    box-shadow: inset 0 0 0 1px;
+    box-shadow: inset 0 0 0 1px white;
   }
 }
 

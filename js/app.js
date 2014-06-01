@@ -91,38 +91,8 @@ app.factory('player', function ($document, $rootScope, $http, $location) {
   };
   document.onkeydown = checkKey;
 
-
   return player;
 
-  // Returns the player, audio, track, and other objects
-  /*
-  return {
-    restrict: 'A',
-    scope: true,
-    link: function (scope, elem, attrs) {
-      scope.player = player;
-      scope.audio = audio;
-      scope.currentTime = 0;
-      scope.duration = 0;
-
-      // Updates the currentTime and duration for the audio
-      audio.addEventListener('timeupdate', function() {
-        if (scope.track == player.track || (scope.playlist && scope.playlist.tracks == player.tracks)){
-          scope.$apply(function() {
-            scope.currentTime = (audio.currentTime * 1000).toFixed();
-            scope.duration = (audio.duration * 1000).toFixed();
-          });  
-        };
-      }, false);
-
-      // Handle click events for seeking
-      scope.seekTo = function($event){
-        var xpos = $event.offsetX / $event.target.offsetWidth;
-        audio.currentTime = (xpos * audio.duration);
-      };
-    }
-  }
-  */
 });
 
 // Plangular Icons
@@ -132,7 +102,8 @@ app.directive('icon', function() {
         play: 'M0 0 L32 16 L0 32 z',
         pause: 'M0 0 H12 V32 H0 z M20 0 H32 V32 H20 z',
         previous: 'M0 0 H4 V14 L32 0 V32 L4 18 V32 H0 z',
-        next: 'M0 0 L28 14 V0 H32 V32 H28 V18 L0 32 z'
+        next: 'M0 0 L28 14 V0 H32 V32 H28 V18 L0 32 z',
+        twitter: 'M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4'
       };
   return {
     restrict: 'A',
@@ -174,12 +145,18 @@ app.filter('playTime', function() {
   };
 });
 
+app.filter('escape', function() {
+  return window.escape;
+});
+
 
 // Main Controller
 app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($scope, $http, $location, player) {
 
   $scope.tracks = [];
+  $scope.location = $location;
   $scope.data;
+  $scope.gif;
   if ($location.search().v) {
     $scope.view = $location.search().v;
   } else {
@@ -190,7 +167,6 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
   function loadTrack(){
     for (var i=0;i<$scope.tracks.length;i++){
       if ($scope.tracks[i].title == $location.search().track) {
-        console.log($scope.tracks[i]);
         player.i = i;
       }
     }
@@ -201,6 +177,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
     $scope.tracks = $scope.data[$scope.view];
     player.load($scope.tracks);
     if ($location.search().track) loadTrack();
+    if ($location.search().gif) gifIt();
   });
 
 
@@ -228,8 +205,32 @@ app.controller('MainCtrl', ['$scope', '$http', '$location', 'player', function($
 
   // Scrubber
   $scope.seekTo = function($event){
-    var xpos = $event.offsetX / $event.target.offsetWidth;
+    if ($event.offsetX) {
+      var xpos = $event.offsetX / $event.target.offsetWidth;
+    } else if ($event.changedTouches) {
+      var xpos = $event.changedTouches[0].clientX / $event.target.offsetWidth;
+    }
     player.audio.currentTime = (xpos * player.audio.duration);
+  };
+
+
+  // GIFs
+  function gifIt() {
+    if ($location.search().gif){
+      $scope.gif = $location.search().gif;
+      player.play(player.tracks[player.i]);
+    }
+  }
+  $scope.setGif = function(gif) {
+    $scope.gif = gif;
+    $location.search('gif', $scope.gif);
+  }
+  $scope.goHome = function() {
+    $scope.gif = null;
+    $location.search('gif', null);
+  }
+  $scope.onTextClick = function($event) {
+    $event.target.select();
   };
 
 }]);

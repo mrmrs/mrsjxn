@@ -13,23 +13,27 @@
 <body ng-controller="MainCtrl" ng-class="[view, player.playing.color]">
 
   <div id="image-background" class="bg-fixed"
-    ng-show="player.playing.background"
+    ng-cloak
+    ng-show="player.playing.background && !gif"
     style="background-image: url({{player.tracks[player.i].background}});">
   </div>
 
   <div id="content" class="relative">
 
-    <nav class="h4 bold caps center clip px2 py1 fadein">
+    <nav ng-hide="gif" class="h4 bold caps center clip px2 py1 fadein">
       <a href ng-click="setView('mr_mrs')" class="left tappable px1" ng-class="{'active-dot': view == 'mr_mrs'}" >MrMrs</a>
       <a href ng-click="setView('jxnblk')" class="right tappable px1" ng-class="{'active-dot': view == 'jxnblk'}" >Jxnblk</a>
       <a href ng-click="setView('mrsjxn')" class="inline-block tappable px1" ng-class="{'active-dot': view == 'mrsjxn'}" >MrsJxn</a>
     </nav>
 
-    <main class="py2">
+    <div ng-if="gif" ng-include="'partials/gif.html'"></div>
+
+    <main ng-hide="gif" class="py2">
 
       <header class="relative py3" ng-include="'partials/header.html'"></header>
 
-      <div id="player" class="center container p2 fadein" ng-include="'partials/player.html'"></div>
+
+      <div id="player" class="center container p2 fadein no-select" ng-include="'partials/player.html'"></div>
 
       <div id="tracklist" ng-include="'partials/tracklist.html'"></div>
 
@@ -41,9 +45,8 @@
 
   <!-- hidden background image preloader -->
   <div style="width:0;height:0;margin-left:-2048px">
-    <div ng-repeat="artist in data">
-      <div ng-repeat="track in artist" style="background-image: url({{track.background}})"></div>
-    </div>
+    <div style="background-image: url({{ data[view][player.i].background }})"></div>
+    <div style="background-image: url({{ data[view][player.i+1].background }})"></div>
   </div>
 
 

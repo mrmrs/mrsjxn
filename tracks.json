@@ -283,7 +283,7 @@
     "stream_url": "http://api.soundcloud.com/tracks/137608823/stream",
     "download_url": "http://api.soundcloud.com/tracks/137608823/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/137608823/attachments",
-    "background": "assets/images/kitten-toy.jpg"
+    "background": "assets/images/chill-kitten-2.jpg"
   }, {
     "kind": "track",
     "id": 70667216,
@@ -309,7 +309,7 @@
     "stream_url": "http://api.soundcloud.com/tracks/70667216/stream",
     "download_url": "http://api.soundcloud.com/tracks/70667216/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/70667216/attachments",
-    "background": "assets/images/smile-blue.jpg"
+    "background": "assets/images/piano-kitten-3.jpg"
   }, {
     "kind": "track",
     "id": 61772356,
@@ -360,7 +360,7 @@
     "waveform_url": "http://w1.sndcdn.com/5Cwgkwz3GOkf_m.png",
     "stream_url": "http://api.soundcloud.com/tracks/67991836/stream",
     "attachments_uri": "http://api.soundcloud.com/tracks/67991836/attachments",
-    "background": "assets/images/kitten-mirror.jpg"
+    "background": "assets/images/kitten-roll.jpg"
   }, {
     "kind": "track",
     "id": 51803494,
@@ -386,7 +386,7 @@
     "stream_url": "http://api.soundcloud.com/tracks/51803494/stream",
     "download_url": "http://api.soundcloud.com/tracks/51803494/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/51803494/attachments",
-    "background": "assets/images/party-kitten.jpg"
+    "background": "assets/images/party-kitten-2.jpg"
   }, {
     "kind": "track",
     "id": 67979286,
@@ -439,7 +439,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/67968310/stream",
     "download_url": "http://api.soundcloud.com/tracks/67968310/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/67968310/attachments",
-    "background": "assets/images/fast-kitten-4.jpg"
+    "background": "assets/images/fast-kitten.jpg",
+    "color": "dark"
   }, {
     "kind": "track",
     "id": 67982131,
