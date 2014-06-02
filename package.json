@@ -5,9 +5,10 @@
   "devDependencies": {
     "gulp": "^3.6.2",
     "gulp-concat": "^2.2.0",
+    "gulp-imagemin": "^0.5.1",
+    "gulp-json-editor": "^2.0.2",
     "gulp-rename": "^1.2.0",
     "minimist": "^0.1.0",
-    "request": "^2.36.0",
-    "gulp-json-editor": "^2.0.2"
+    "request": "^2.36.0"
   }
 }

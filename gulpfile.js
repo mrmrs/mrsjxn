@@ -1,9 +1,10 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var minimist = require('minimist')(process.argv.slice(2));
-var request = require('request');
-var jsonEditor = require('gulp-json-editor');
+var gulp = require('gulp'),
+    imagemin = require('gulp-imagemin'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+    minimist = require('minimist')(process.argv.slice(2)),
+    request = require('request'),
+    jsonEditor = require('gulp-json-editor');
 
 gulp.task('default', function() {
   console.log('herro!');
@@ -11,6 +12,16 @@ gulp.task('default', function() {
     console.log(minimist);
   }
 });
+
+gulp.task('image-minify', function () {
+    return gulp.src('assets/images/*.jpg')
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
+
 
 gulp.task('add', function() {
   var baseUrl = 'http://soundcloud.com/',
