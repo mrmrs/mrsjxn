@@ -344,7 +344,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/61772356/stream",
     "download_url": "http://api.soundcloud.com/tracks/61772356/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/61772356/attachments",
-    "background": "assets/images/neko-8.jpg"
+    "background": "assets/images/neko-8.jpg",
+    "gif": "http://24.media.tumblr.com/f36373be357a72d3318f910d35f603e8/tumblr_n64eb05dR11sa7tuso1_400.gif"
   }, {
     "kind": "track",
     "id": 67991836,
@@ -423,7 +424,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/67979286/stream",
     "download_url": "http://api.soundcloud.com/tracks/67979286/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/67979286/attachments",
-    "background": "assets/images/kitten-table.jpg"
+    "background": "assets/images/kitten-table.jpg",
+    "gif": "http://31.media.tumblr.com/7e3bd7cd0fa9a6fc3dd932bc7b93e2b3/tumblr_n6ew5qcM9p1s8bxgqo1_400.gif"
   }, {
     "kind": "track",
     "id": 67968310,
@@ -449,7 +451,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/67968310/stream",
     "download_url": "http://api.soundcloud.com/tracks/67968310/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/67968310/attachments",
-    "background": "assets/images/clean-kitten.jpg"
+    "background": "assets/images/clean-kitten.jpg",
+    "gif": "http://24.media.tumblr.com/29d88156c6312819bdf9062aefa0a4b3/tumblr_n6ckfp83zh1rwnxnho1_400.gif"
   }, {
     "kind": "track",
     "id": 67982131,
@@ -502,7 +505,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/67972898/stream",
     "download_url": "http://api.soundcloud.com/tracks/67972898/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/67972898/attachments",
-    "background": "assets/images/tall-kitten-3.jpg"
+    "background": "assets/images/tall-kitten-3.jpg",
+    "gif": "http://24.media.tumblr.com/95e9dbf5d8218a73d8ed39ec387dbcb2/tumblr_n6ftycuZO91rwnxnho1_250.gif"
   }, {
     "kind": "track",
     "id": 44919878,
@@ -528,7 +532,8 @@
     "stream_url": "http://api.soundcloud.com/tracks/44919878/stream",
     "download_url": "http://api.soundcloud.com/tracks/44919878/download",
     "attachments_uri": "http://api.soundcloud.com/tracks/44919878/attachments",
-    "background": "assets/images/fluffy-kitten.jpg"
+    "background": "assets/images/fluffy-kitten.jpg",
+    "gif": "http://24.media.tumblr.com/2525230bf98b516205e74e590f7eaceb/tumblr_n65cmb77Z61tcdwqno1_400.gif"
   }],
   "mr_mrs": [
   {
