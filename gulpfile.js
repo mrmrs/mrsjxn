@@ -18,7 +18,7 @@ gulp.task('image-minify', function () {
         .pipe(imagemin({
             progressive: true
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('assets/images/'));
 });
 
 
