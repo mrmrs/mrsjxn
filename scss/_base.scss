@@ -1,0 +1,47 @@
+// Base
+
+body {
+  font-family: 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.25;
+  padding: 0;
+  color: white;
+  background-color: $dark;
+}
+
+body, button, input, select, textarea, pre { margin: 0; }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+svg {
+  max-height: 100%;
+  fill: white;
+}
+
+.list-simple {
+  list-style: none;
+  padding-left: 0;
+}
+
+.input {
+  font: inherit;
+  appearance: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 2rem;
+  line-height: 1.5rem;
+  padding: .25rem .5rem;
+  border-radius: .25rem;
+  border: none;
+}
+.butt-reset {
+  font: inherit;
+  border: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: none;
+  color: inherit;
+  padding: 0;
+}

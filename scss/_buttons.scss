@@ -1,0 +1,96 @@
+// Buttons
+
+.butt {
+  display: inline-block;
+  line-height: 2em;
+  padding-right: .5em;
+  padding-left: .5em;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px;
+  border-radius: .25rem;
+  &:hover {
+    color: $dark;
+    background-color: white;
+    box-shadow: none;
+    svg {
+      fill: $dark;
+    }
+  }
+}
+
+.butt-active {
+  color: $dark;
+  background-color: white;
+}
+
+.butt-circle {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  line-height: 3em;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 3px;
+  border-radius: 50%;
+  transition: all .1s ease;
+  -webkit-animation: popin .1s ease;
+  animation: popin .1s ease;
+  svg {
+    position: relative;
+    top: .375em;
+    width: 1.25em;
+    height: 1.25em;
+  }
+  .nudge-left { left: .125em; }
+  &:hover {
+    color: $dark;
+    background-color: white;
+    box-shadow: none;
+    svg { fill: $dark; }
+  }
+}
+
+.butt-icon {
+  display: inline-block;
+  line-height: 4rem;
+  width: 1.5em;
+  height: 4em;
+  padding: 0 1em;
+  svg {
+    position: relative;
+    top: .3125em;
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.butt-tap {
+  display: block;
+  line-height: 2em;
+  //padding: .5em 1em;
+  transition: all .3s ease;
+  box-shadow: inset 0 0 0 1px transparent;
+  &:hover {
+    box-shadow: inset 0 0 0 1px white;
+  }
+}
+
+.active {
+  color: $dark;
+  background-color: white;
+  a { color: $dark; }
+}
+
+.active-dot {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+  }
+}

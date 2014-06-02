@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="#ffffff">
+  <path fill="none" stroke="#ffffff" stroke-width="0.0625" opacity="0.5" d="
+    M16 2 A14 14 0 0 0 16 30 A14 14 0 0 0 16 2 M16 6 A10 10 0 0 0 16 26 A10 10 0 0 0 16 6
+  "/>
+  <path d=" M16 1.75 A0.25 0.25 0 0 0 16 2.25 A0.25 0.25 0 0 0 16 1.75 " >
+    <animateTransform attributeName="transform" type="rotate"
+      from="0 16 16" to="360 16 16" dur="16s" repeatCount="indefinite" />
+  </path>
+  <path d=" M16 5.75 A0.25 0.25 0 0 0 16 6.25 A0.25 0.25 0 0 0 16 5.75 M16 25.75 A0.25 0.25 0 0 0 16 26.25 A0.25 0.25 0 0 0 16 25.75 " >
+    <animateTransform attributeName="transform" type="rotate"
+      from="0 16 16" to="360 16 16" dur="11s" repeatCount="indefinite" />
+  </path>
+</svg>

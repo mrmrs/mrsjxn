@@ -1,0 +1,52 @@
+// Avatar
+
+$avatar-size: 196px;
+
+.avatars {
+  position: relative;
+  height: $avatar-size;
+  overflow: hidden;
+}
+.avatar {
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  transition: all .6s ease;
+  width: $avatar-size;
+  svg {
+    width: $avatar-size;
+    height: $avatar-size;
+    transition: all .6s ease;
+  }
+}
+.mrsjxn {
+  .avatar--skullcat {
+    width: $avatar-size/2;
+    margin-left: -($avatar-size/2 + 4px);
+  }
+  .avatar--jxnblk {
+    width: $avatar-size/2;
+    margin-left: 4px;
+    svg {
+      margin-left: -$avatar-size/2;
+    }
+  }
+}
+.jxnblk {
+  .avatar--skullcat {
+    left: -$avatar-size;
+    opacity: 0;
+  }
+  .avatar--jxnblk {
+    margin-left: -$avatar-size/2;
+  }
+}
+.mr_mrs {
+  .avatar--skullcat {
+    margin-left: -$avatar-size/2;
+  }
+  .avatar--jxnblk {
+    left: 100%;
+    opacity: 0;
+  }
+}

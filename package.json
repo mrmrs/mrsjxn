@@ -1,0 +1,13 @@
+{
+  "name": "mrsjxn",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-concat": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "minimist": "^0.1.0",
+    "request": "^2.36.0",
+    "gulp-json-editor": "^2.0.2"
+  }
+}

@@ -1,0 +1,32 @@
+// Type
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $space;
+}
+
+.h0 { font-size: 6rem; }
+.h1, h1 { font-size: 3rem; }
+.h2, h2 { font-size: 1.5rem; }
+.h3, h3, h4, h5, h6, p { font-size: 1.25rem; }
+.h4 { font-size: .875rem; }
+.h5 { font-size: .75rem; }
+
+.caps {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+.regular { font-weight: 400; }
+.bold { font-weight: 600; }
+.center { text-align: center; }
+.tappable { line-height: 2rem; }
+.nowrap { white-space: nowrap; }
+.break-word { word-wrap: break-word; }
+
