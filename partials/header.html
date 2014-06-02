@@ -46,7 +46,22 @@
   </div>
 </div>
 
-<div class="absolute absolute-left clickable no-tap-highlight" ng-hide="view == 'jxnblk'" ng-click="setView('mr_mrs')"></div>
-<div class="absolute clickable no-tap-highlight" ng-hide="view == 'mrsjxn'" ng-class="{'absolute-left': view == 'jxnblk', 'absolute-right': view == 'mr_mrs'}" ng-click="setView('mrsjxn')"></div>
-<div class="absolute absolute-right clickable no-tap-highlight" ng-hide="view == 'mr_mrs'" ng-click="setView('jxnblk')"></div>
+<div class="absolute absolute-left clickable no-tap-highlight hover-group" ng-hide="view != 'mrsjxn'" ng-click="setView('mr_mrs')">
+  <div class="hover-show">
+    <div icon="chevronLeft" class="vertical-center ml1"></div>
+  </div>
+</div>
+<div class="absolute clickable no-tap-highlight hover-group" ng-hide="view == 'mrsjxn'" ng-class="{'absolute-left': view == 'jxnblk', 'absolute-right': view == 'mr_mrs'}" ng-click="setView('mrsjxn')">
+  <div ng-show="view == 'jxnblk'" class="hover-show">
+    <div icon="chevronLeft" class="vertical-center ml1 "></div>
+  </div>
+  <div ng-show="view == 'mr_mrs'" class="hover-show">
+    <div icon="chevronRight" class="vertical-center r0 mr1"></div>
+  </div>
+</div>
+<div class="absolute absolute-right clickable no-tap-highlight hover-group" ng-hide="view != 'mrsjxn'" ng-click="setView('jxnblk')">
+  <div class="hover-show">
+    <div icon="chevronRight" class="vertical-center r0 mr1"></div>
+  </div>
+</div>
 
