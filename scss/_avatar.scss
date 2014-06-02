@@ -19,10 +19,6 @@ $avatar-size: 196px;
     transition: all .6s ease;
   }
 }
-.avatar--jxnblk-eyes {
-  margin-left: -$avatar-size/2;
-  //transition: all .6s ease;
-}
 .mrsjxn {
   .avatar--skullcat {
     width: $avatar-size/2;
@@ -35,9 +31,6 @@ $avatar-size: 196px;
       margin-left: -$avatar-size/2;
     }
   }
-  .avatar--jxnblk-eyes {
-    opacity: 0;
-  }
 }
 .jxnblk {
   .avatar--skullcat {
@@ -47,20 +40,12 @@ $avatar-size: 196px;
   .avatar--jxnblk {
     margin-left: -$avatar-size/2;
   }
-  .avatar--jxnblk-eyes {
-    margin-left: -$avatar-size/2;
-    opacity: 0;
-  }
 }
 .mr_mrs {
   .avatar--skullcat {
     margin-left: -$avatar-size/2;
   }
   .avatar--jxnblk {
-    left: 100%;
-    opacity: 0;
-  }
-  .avatar--jxnblk-eyes {
     left: 100%;
     opacity: 0;
   }
