@@ -10,5 +10,8 @@
     "gulp-rename": "^1.2.0",
     "minimist": "^0.1.0",
     "request": "^2.36.0"
+  },
+  "scripts": {
+    "start": "gulp"
   }
 }
