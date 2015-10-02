@@ -15,6 +15,6 @@
     "request": "^2.36.0"
   },
   "scripts": {
-    "start": "gulp add valis"
+    "start": "gulp add --track minibaar"
   }
 }

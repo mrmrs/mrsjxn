@@ -1,6 +1,36 @@
 {
   "mrsjxn": [{
     "kind": "track",
+    "id": 226208956,
+    "created_at": "2015/09/30 02:46:49 +0000",
+    "user_id": 3785024,
+    "duration": 336096,
+    "last_modified": "2015/09/30 02:46:49 +0000",
+    "permalink": "minibaar",
+    "title": "MINIBAAR",
+    "description": "",
+    "uri": "https://api.soundcloud.com/tracks/226208956",
+    "user": {
+      "id": 3785024,
+      "kind": "user",
+      "permalink": "mrsjxn",
+      "username": "mrsjxn",
+      "last_modified": "2015/09/19 12:47:07 +0000",
+      "uri": "https://api.soundcloud.com/users/3785024",
+      "permalink_url": "http://soundcloud.com/mrsjxn",
+      "avatar_url": "https://i1.sndcdn.com/avatars-000087415326-y1wdoj-large.jpg"
+    },
+    "permalink_url": "http://soundcloud.com/mrsjxn/minibaar",
+    "artwork_url": null,
+    "waveform_url": "https://w1.sndcdn.com/V6NJUlZIzLvZ_m.png",
+    "stream_url": "https://api.soundcloud.com/tracks/226208956/stream",
+    "attachments_uri": "https://api.soundcloud.com/tracks/226208956/attachments",
+    "background": "assets/images/52.jpg",
+    "gif": "https://media.giphy.com/media/pAdDYB5eqhvuE/giphy.gif",
+    "policy": "ALLOW",
+    "monetization_model": "NOT_APPLICABLE"
+  }, {
+    "kind": "track",
     "id": 151703031,
     "created_at": "2014/05/28 17:38:45 +0000",
     "user_id": 3785024,
