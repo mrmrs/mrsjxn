@@ -73,7 +73,11 @@ const MusicPlayer = ({ tracks, currentTrackIndex, setCurrentTrackIndex }) => {
              onTimeUpdate={onTimeUpdate} />
       <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
         <button onClick={() => skipTrack(-1)} style={{ border: 0, background: 'transparent' }}><IconPrev /></button>
-        <button onClick={playPause} style={{ borderRadius: '9999px', aspectRatio: 1, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', borderWidth: '4px', width: '64px', height: '64px' }}>{isPlaying ? <IconPause /> : <IconPlay />}</button>
+    <button onClick={playPause} style={{ 
+      all: 'unset', 
+        borderRadius: '9999px', 
+        aspectRatio: 1, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', borderStyle: 'solid', borderWidth: '4px', borderColor: 'currentColor' , width: '64px', height: '64px' 
+    }}>{isPlaying ? <IconPause /> : <IconPlay />}</button>
         <button style={{ background: 'transparent', border: 0, }} onClick={() => skipTrack(1)}><IconNext /></button>
       </div>
     <p style={{ maxWidth: '640px', margin: '16px auto', textAlign: 'center', fontSize: '32px', fontWeight: 'bold' }}>{tracks[currentTrackIndex].title}</p>
