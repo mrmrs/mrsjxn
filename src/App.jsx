@@ -20,7 +20,7 @@ import './App.css'
   const jxnTracks = [
     { title: 'Let Go', url: '/jxnblk-MB-166.mp3', time: '5:00'},
     { title: 'Really Wanna', url: '/jxnblk-MB-165.mp3', time: '4:30'},
-    { title: 'MMMXIII', url: '/jxnblk-mmmxiii.mp3', time: '20:13'},
+    { title: 'MMMXIII', url: 'https://dlu344star2bj.cloudfront.net/jxnblk-mmmxiii.mp3', time: '20:13'},
   ]
 
   const mrsTracks = [
