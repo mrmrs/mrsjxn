@@ -1,65 +1,13 @@
-<!DOCTYPE html> 
-<html lang="en" ng-app="app"> 
-<head>
-	<meta charset="utf-8">
-  <title>MRSJXN - Post-Future</title>
-	<meta name="author" content="Adam Morse & Brent Jackson">
-	<meta name="description" content="MRMRS + JXNBLK = MRSJXN. Post-Future Beats">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/style.css">
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.min.js"></script>
-</head>
-<body ng-controller="MainCtrl" ng-class="[view]">
-
-  <div id="image-background" class="bg-fixed"
-    ng-cloak ng-show="player.playing.background && !gif"
-    style="background-image: url({{player.tracks[player.i].background}});">
-  </div>
-
-
-  <div id="content" class="relative" style="height:100%">
-
-    <div ng-if="gif" class="table gif" style="background-image:url({{ gif }});"></div>
-
-    <nav ng-hide="gif" class="h4 bold caps center clip px2 py1 fadein">
-      <a href ng-click="setView('mr_mrs')" class="left tappable px1" ng-class="{'active-dot': view == 'mr_mrs'}" >MrMrs</a>
-      <a href ng-click="setView('jxnblk')" class="right tappable px1" ng-class="{'active-dot': view == 'jxnblk'}" >Jxnblk</a>
-      <a href ng-click="setView('mrsjxn')" class="inline-block tappable px1" ng-class="{'active-dot': view == 'mrsjxn'}" >MrsJxn</a>
-    </nav>
-
-    <main ng-hide="gif" class="py2">
-
-      <header class="relative py3" ng-include="'partials/header.html'"></header>
-
-      <div id="player" class="center container p2 fadein no-select" ng-include="'partials/player.html'"></div>
-
-      <div id="tracklist" ng-include="'partials/tracklist.html'"></div>
-
-    </main>
-
-    <div ng-if="gif" ng-include="'partials/gif.html'"></div>
-
-    <footer class="center px2 py4" ng-include="'partials/footer.html'"></footer>
-
-  </div>
-
-  <!-- hidden background image preloader -->
-  <div style="width:0;height:0;margin-left:-2048px">
-    <div style="background-image: url({{ data[view][player.i].background }})"></div>
-    <div style="background-image: url({{ data[view][player.i+1].background }})"></div>
-  </div>
-  
-  <script src="js/app.js"></script>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39100363-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRSJXN - Post Future</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

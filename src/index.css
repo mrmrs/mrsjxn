@@ -1,0 +1,12 @@
+*, *:after, *:before { 
+  box-sizing: border-box;
+}
+
+html { 
+  font-family: monospace!important;
+}
+
+
+svg rect { 
+  transition: width .4s ease;
+}
